@@ -21,8 +21,8 @@ obligatoire :
 		memcmp
 		-> strlen
 		strdup
-		strcpy
-		strncpy
+		-> strcpy
+		-> strncpy
 		strcat
 		strncat
 		strlcat
@@ -60,12 +60,12 @@ obligatoire :
 		ft_itoa
 		-> ft_putchar
 		-> ft_putstr
-		ft_putendl
-		ft_putnbr
+		-> ft_putendl
+		-> ft_putnbr
 		- ft_putchar_fd
 		- ft_putstr_fd
-		ft_putendl_fd
-		ft_putnbr_fd
+		- ft_putendl_fd
+		- ft_putnbr_fd
 
 bonus :
 	ft_lstnew

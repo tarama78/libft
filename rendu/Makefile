@@ -26,7 +26,9 @@ C_FILES = ft_strlen.c \
 		  ft_putchar_fd.c \
 		  ft_putstr_fd.c \
 		  ft_putendl_fd.c \
-		  ft_putnbr_fd.c
+		  ft_putnbr_fd.c \
+		  ft_strcpy.c \
+		  ft_strncpy.c
 
 O_FILES = $(C_FILES:.c=.o)
 
