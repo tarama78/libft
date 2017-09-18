@@ -12,11 +12,13 @@
 
 NAME = libft.a
 
+NAME_EXE = ../libft_test
+
 MAIN_C = ../main.c
 
 MAIN_O = main.o
 
-C_FILES = ""
+C_FILES = ft_strlen.c
 
 O_FILES = $(C_FILES:.c=.o)
 
@@ -28,7 +30,9 @@ all: $(NAME)
 
 $(NAME):
 	gcc -c $(C_FILES) $(FLAGS) $(LIB)
-	gcc -o $(NAME) $(O_FILES) $(FLAGS) $(LIB)
+	ar rc $(NAME) $(O_FILES)
+	rm $(O_FILES)
+	ranlib $(NAME)
 
 clean:
 	rm -f $(O_FILES)
@@ -43,17 +47,18 @@ re: fclean all
 
 m_all:
 	gcc -c $(C_FILES) $(MAIN_C) $(FLAGS) $(LIB)
-	gcc -o $(NAME) $(O_FILES) $(MAIN_O) $(FLAGS) $(LIB)
+	ar rc $(NAME) $(O_FILES)
+	rm $(O_FILES)
+	ranlib $(NAME)
+	gcc -o $(NAME_EXE) $(MAIN_O) $(NAME)
 
-m_re: fclean m_re
+m_re: fclean m_all
 
 m_noflags: fclean
 	gcc -c $(C_FILES) $(MAIN_C) $(LIB)
-	gcc -o $(NAME) $(O_FILES) $(MAIN_0) $(LIB)
-
-m_noobj: m_re clean
-
-m_noflags_noobj: m_noflags clean
+	ar rc $(NAME) $(O_FILES)
+	rm $(O_FILES)
+	ranlib $(NAME)
 
 open:
 	vim +12 `find . -iname "*.c" -o -iname "*.h" -o -iname "*.txt" \
@@ -66,12 +71,13 @@ m_open:
 m_compil:
 	clear
 	make m_re
-	make m_clean
+	make clean
+	find . -iname "main.o" -delete
 	@echo ""
 
 m_exec:
-	make compil
-	./$(NAME)
+	make m_compil
+	./$(NAME_EXE)
 
 gadd: clean clean_swp
 	git add -A
