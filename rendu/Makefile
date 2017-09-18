@@ -18,7 +18,15 @@ MAIN_C = ../main.c
 
 MAIN_O = main.o
 
-C_FILES = ft_strlen.c
+C_FILES = ft_strlen.c \
+		  ft_putchar.c \
+		  ft_putstr.c \
+		  ft_putendl.c \
+		  ft_putnbr.c \
+		  ft_putchar_fd.c \
+		  ft_putstr_fd.c \
+		  ft_putendl_fd.c \
+		  ft_putnbr_fd.c
 
 O_FILES = $(C_FILES:.c=.o)
 

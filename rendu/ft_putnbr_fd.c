@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/18 13:18:11 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/09/18 13:18:11 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/09/18 16:40:01 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/09/18 16:40:01 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <unistd.h>
+#include "libft.h"
 
-# include <string.h>
-
-size_t		ft_strlen(const char *s);
-void		ft_putchar(char c);
-void		ft_putstr(const char *s);
-void		ft_putendl(const char *s);
-void		ft_putnbr(int n);
-void		ft_putchar_fd(char c, int fd);
-void		ft_putstr_fd(const char *s, int fd);
-void		ft_putnbr_fd(int n, int fd);
-void		ft_putendl_fd(const char *s, int fd);
-
-#endif
+void		ft_putnbr_fd(int n, int fd)
+{
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		if (n <= -10)
+			ft_putnbr_fd((unsigned int)-n / 10, fd);
+		ft_putchar_fd((unsigned int)-n % 10 + '0', fd);
+	}
+	else if (n < 10)
+		ft_putchar_fd(n + '0', fd);
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
+}
