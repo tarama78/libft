@@ -122,11 +122,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 libft.h
+badd +24 libft.h
 badd +1 Makefile
 badd +1 ~/Documents/git/libft/main.c
-badd +1 ~/Documents/git/libft/a_faire.txt
-badd +16 ft_strlen.c
+badd +36 ~/Documents/git/libft/a_faire.txt
+badd +13 ft_strlen.c
 badd +18 ft_putchar.c
 badd +18 ft_putstr.c
 badd +16 ft_putchar_fd.c
@@ -137,7 +137,19 @@ badd +13 putendl.c
 badd +13 ft_putendl.c
 badd +18 ft_putendl_fd.c
 badd +15 ft_strcpy.c
-badd +15 ft_strncpy.c
+badd +21 ft_strncpy.c
+badd +17 ft_strcmp.c
+badd +23 ft_strncmp.c
+badd +20 ft_strcat.c
+badd +1 ft_strncat.c
+badd +1 ft_toupper.c
+badd +17 ft_tolower.c
+badd +17 ft_isalpha.c
+badd +18 ft_isdigit.c
+badd +16 ft_isalnum.c
+badd +15 ft_isascii.c
+badd +17 ft_isprint.c
+badd +24 ft_atoi.c
 argglobal
 silent! argdel *
 argadd libft.h
@@ -260,12 +272,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 20 - ((19 * winheight(0) + 24) / 48)
+let s:l = 43 - ((33 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
-normal! 0
+43
+normal! 019|
 wincmd w
 argglobal
 edit ~/Documents/git/libft/a_faire.txt
@@ -371,12 +383,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 24 - ((12 * winheight(0) + 24) / 48)
+let s:l = 60 - ((37 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-24
-normal! 010|
+60
+normal! 08|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 102 + 102) / 204)
 exe 'vert 2resize ' . ((&columns * 101 + 102) / 204)
@@ -496,12 +508,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 27 - ((26 * winheight(0) + 24) / 48)
+let s:l = 30 - ((29 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-27
-normal! 016|
+30
+normal! 0
 wincmd w
 argglobal
 edit ~/Documents/git/libft/main.c
@@ -607,12 +619,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 133 - ((32 * winheight(0) + 24) / 48)
+let s:l = 425 - ((7 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-133
-normal! 039|
+425
+normal! 018|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 102 + 102) / 204)
 exe 'vert 2resize ' . ((&columns * 101 + 102) / 204)
@@ -732,15 +744,15 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 29 - ((28 * winheight(0) + 24) / 48)
+let s:l = 18 - ((17 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-29
-normal! 0
+18
+normal! 074|
 wincmd w
 argglobal
-edit ft_strncpy.c
+edit ft_atoi.c
 setlocal noautoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -843,13 +855,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 17 - ((16 * winheight(0) + 24) / 48)
+let s:l = 16 - ((15 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-17
-normal! 010|
-lcd ~/Documents/git/libft/rendu
+16
+normal! 0
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 102 + 102) / 204)

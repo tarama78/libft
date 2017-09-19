@@ -23,23 +23,23 @@ obligatoire :
 		strdup
 		-> strcpy
 		-> strncpy
-		strcat
-		strncat
+		-> strcat
+		-> strncat
 		strlcat
 		strchr
 		strrchr
 		strstr
 		strnstr
-		strcmp
-		strncmp
+		-> strcmp
+		-> strncmp
 		atoi
-		isalpha
-		isdigit
-		isalnum
-		isascii
-		isprint
-		toupper
-		tolower
+		-> isalpha
+		-> isdigit
+		-> isalnum
+		-> isascii
+		-> isprint
+		-> toupper
+		-> tolower
 
 	fonction supplementaire :
 		ft_memalloc
@@ -62,10 +62,10 @@ obligatoire :
 		-> ft_putstr
 		-> ft_putendl
 		-> ft_putnbr
-		- ft_putchar_fd
-		- ft_putstr_fd
-		- ft_putendl_fd
-		- ft_putnbr_fd
+		-> ft_putchar_fd
+		-> ft_putstr_fd
+		-> ft_putendl_fd
+		-> ft_putnbr_fd
 
 bonus :
 	ft_lstnew
