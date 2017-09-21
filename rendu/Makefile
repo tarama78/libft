@@ -40,7 +40,25 @@ C_FILES = ft_strlen.c \
 		  ft_isalnum.c \
 		  ft_isascii.c \
 		  ft_isprint.c \
-		  ft_atoi.c
+		  ft_atoi.c \
+		  ft_itoa.c \
+		  ft_strstr.c \
+		  ft_strnstr.c \
+		  ft_strchr.c \
+		  ft_strrchr.c \
+		  ft_memalloc.c \
+		  ft_memdel.c \
+		  ft_strnew.c \
+		  ft_strdel.c \
+		  ft_strclr.c \
+		  ft_striter.c \
+		  ft_striteri.c \
+		  ft_strmap.c \
+		  ft_strmapi.c \
+		  ft_strequ.c \
+		  ft_strnequ.c \
+		  ft_strsub.c \
+		  ft_strjoin.c
 
 O_FILES = $(C_FILES:.c=.o)
 

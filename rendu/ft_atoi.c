@@ -18,11 +18,12 @@ int			ft_atoi(const char *nptr)
 	int		neg;
 
 	ret = 0;
-	while (ISSPACE(*nptr))
+	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n' || *nptr == '\v' ||
+		*nptr == '\f' || *nptr == '\r')
 		++nptr;
 	neg = (*nptr == '-') ? -1 : 1;
 	nptr = (*nptr == '-' || *nptr == '+') ? nptr : nptr - 1;
 	while (*(++nptr) >= '0' && *nptr <= '9')
 		ret = ret * 10 + *nptr - '0';
-	return (ret * (neg));
+	return (ret * neg);
 }

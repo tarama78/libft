@@ -26,13 +26,13 @@ obligatoire :
 		-> strcat
 		-> strncat
 		strlcat
-		strchr
-		strrchr
-		strstr
-		strnstr
+		-> strchr
+		-> strrchr
+		-> strstr
+		-x strnstr -> je comprend pas trop la fonct
 		-> strcmp
 		-> strncmp
-		atoi
+		-> atoi
 		-> isalpha
 		-> isdigit
 		-> isalnum
@@ -42,22 +42,22 @@ obligatoire :
 		-> tolower
 
 	fonction supplementaire :
-		ft_memalloc
-		ft_memdel
-		ft_strnew
-		ft_strdel
-		ft_strclr
-		ft_striter
-		ft_striteri
-		ft_strmap
-		ft_strmapi
-		ft_strequ
-		ft_strnequ
-		ft_strsub
-		ft_strjoin
+		-? ft_memalloc -> comment init a 0 ?
+		-> ft_memdel
+		-> ft_strnew
+		-? ft_strdel -> pareil que memdel non ?
+		-> ft_strclr
+		-> ft_striter
+		-> ft_striteri
+		-> ft_strmap
+		-> ft_strmapi
+		-> ft_strequ
+		-> ft_strnequ
+		-> ft_strsub
+		- ft_strjoin
 		ft_strtrim
 		ft_strsplit
-		ft_itoa
+		-> ft_itoa
 		-> ft_putchar
 		-> ft_putstr
 		-> ft_putendl
