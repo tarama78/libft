@@ -54,9 +54,9 @@ obligatoire :
 		-> ft_strequ
 		-> ft_strnequ
 		-> ft_strsub
-		- ft_strjoin
-		ft_strtrim
-		ft_strsplit
+		-> ft_strjoin -> comme strcat mais cree une nouv variable
+		-> ft_strtrim -> jsp si c'est bon
+		-> ft_strsplit
 		-> ft_itoa
 		-> ft_putchar
 		-> ft_putstr

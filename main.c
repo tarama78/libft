@@ -932,5 +932,55 @@ int			main(int ac, char **av)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
+	
+	ft_wait();
+
+	//ft_strstrim.c
+	printf(YELLOW"ft_strstrim :\n"WHITE);
+	char	s13[6][100] =
+	{
+		"      la str 1         ",
+		"\t\t  \t\t\n une autre str pour des tests",
+		"encore une str\t\n     \t\t\n\n   \n",
+		"et... la derniere",
+		"",
+		"      \t\t\n\n    \n\n"
+	};
+	i = -1;
+	j = 0;
+	while (++i < 6)
+		printf("\ts -> \"%s\"\n\tft_strtrim -> \"%s\"\n\n", s13[i],
+				ft_strtrim(s13[i]));
+	VERIFY_MSG;
+
+	//ft_strsplit.c
+	printf(YELLOW"ft_strplit :\n"WHITE);
+	char		s14[7][100] =
+	{
+		"*****la***str*1*",
+		"une autre str pour des tests",
+		"encore\tune\tstr",
+		"une de plus pour le split des u",
+		"rrrrrrrrrr",
+		"",
+		"seksek"
+	};
+	char		c4[7] = {'*', ' ', '\t', 'u', 'r', 'f', '\n'};
+	char		***s15;
+	if (!(s15 = malloc(sizeof(**s15) * 7)))
+		return (0);
+	i = -1;
+	while (++i < 7)
+	{
+		printf("\ts -> \"%s\"\n", s14[i]);
+		s15[i] = ft_strsplit(s14[i], c4[i]);
+		j = -1;
+		while (s15[i][++j] != 0)
+		{
+			printf("\t\t\"%s\"\n", s15[i][j]);
+		}
+	}
+	VERIFY_MSG;
+		
 	return(0);
 }

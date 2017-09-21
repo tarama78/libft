@@ -58,7 +58,9 @@ C_FILES = ft_strlen.c \
 		  ft_strequ.c \
 		  ft_strnequ.c \
 		  ft_strsub.c \
-		  ft_strjoin.c
+		  ft_strjoin.c \
+		  ft_strtrim.c \
+		  ft_strsplit.c
 
 O_FILES = $(C_FILES:.c=.o)
 
