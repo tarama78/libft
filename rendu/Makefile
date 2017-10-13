@@ -60,7 +60,13 @@ C_FILES = ft_strlen.c \
 		  ft_strsub.c \
 		  ft_strjoin.c \
 		  ft_strtrim.c \
-		  ft_strsplit.c
+		  ft_strsplit.c \
+#		  ft_memset.c \
+		  ft_bzero.c \
+		  ft_strdup.c \
+		  ft_memcpy.c \
+		  ft_memcmp.c \
+		  ft_strlcat.c
 
 O_FILES = $(C_FILES:.c=.o)
 

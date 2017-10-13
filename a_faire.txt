@@ -12,20 +12,20 @@
 
 obligatoire :
 	fonction libc :
-		memset
-		bzero
-		memcpy
+		-> memset
+		-> bzero
+		-x memcpy
 		memccpy
 		memmove
 		memchr
-		memcmp
+		-x memcmp
 		-> strlen
-		strdup
+		-> strdup -> modifie errno : faut le faire aussi ?
 		-> strcpy
 		-> strncpy
 		-> strcat
 		-> strncat
-		strlcat
+		- strlcat
 		-> strchr
 		-> strrchr
 		-> strstr
@@ -42,10 +42,10 @@ obligatoire :
 		-> tolower
 
 	fonction supplementaire :
-		-? ft_memalloc -> comment init a 0 ?
+		-> ft_memalloc
 		-> ft_memdel
 		-> ft_strnew
-		-? ft_strdel -> pareil que memdel non ?
+		-> ft_strdel
 		-> ft_strclr
 		-> ft_striter
 		-> ft_striteri

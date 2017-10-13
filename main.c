@@ -72,7 +72,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_strlen.c
+	// ft_strlen.c
 	char	s1[] = "12345678";
 	printf(YELLOW"ft_strlen :\n"WHITE"\tstrlen	  %s -> %zu\n\tft_strlen %s -> "
 			"%zu\n" , s1, strlen(s1), s1, ft_strlen(s1));
@@ -83,7 +83,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_putchar.c
+	// ft_putchar.c
 	char	c1 = 'a';
 	printf(YELLOW"ft_putchar :\n"WHITE"\tprintf		-> %c\n\tft_putchar -> ",
 			c1);
@@ -94,7 +94,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_putstr.c
+	// ft_putstr.c
 	printf(YELLOW"ft_putstr :\n"WHITE"\tprintf	  -> %s\n\tft_putstr -> ", s1);
 	fflush(stdout);
 	ft_putstr(s1);
@@ -103,7 +103,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_putendl.c
+	// ft_putendl.c
 	printf(YELLOW"ft_putendl :\n"WHITE"\tprintf		-> %s\n\tft_putendl -> ",
 			s1);
 	fflush(stdout);
@@ -112,7 +112,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_putnbr.c
+	// ft_putnbr.c
 	int		n1[8] = {INT_MIN, -123, -5, 0, 9, 10, 5647, INT_MAX};
 	printf(YELLOW"ft_putnbr :\n"WHITE);
 	i = -1;
@@ -127,7 +127,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_puchar_fd.c
+	// ft_puchar_fd.c
 	printf(YELLOW"ft_putchar_fd :\n"WHITE"\tprintf		  -> %c\n"
 			"\tft_putchar_fd -> ", c1);
 	fflush(stdout);
@@ -137,7 +137,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_putstr_fd.c
+	// ft_putstr_fd.c
 	printf(YELLOW"ft_putstr_fd :\n"WHITE"\tprintf		-> %s\n"
 			"\tft_putstr_fd -> ", s1);
 	fflush(stdout);
@@ -147,7 +147,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_putendl_fd.c
+	// ft_putendl_fd.c
 	printf(YELLOW"ft_putendl_fd :\n"WHITE"\tprintf		  -> %s\n"
 			"\tft_putendl_fd -> ", s1);
 	fflush(stdout);
@@ -156,7 +156,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_putnbr_fd.c
+	// ft_putnbr_fd.c
 	printf(YELLOW"ft_putnbr_fd :\n"WHITE);
 	i = -1;
 	while (++i < 8)
@@ -170,7 +170,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_strcmp.c
+	// ft_strcmp.c
 	printf(YELLOW"ft_strcmp :\n"WHITE);
 	char	s2[4][100] =
 	{
@@ -208,7 +208,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_strncmp.c
+	// ft_strncmp.c
 	printf(YELLOW"ft_strncmp :\n"WHITE);
 	int		n2[] = {
 		ft_strlen(s2[0]) + 5,
@@ -238,7 +238,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_strcpy.c
+	// ft_strcpy.c
 	printf(YELLOW"ft_strcpy :\n"WHITE);
 	char		*s4[4];
 	i = -1;
@@ -264,7 +264,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_strncpy.c
+	// ft_strncpy.c
 	printf(YELLOW"ft_strncpy :\n"WHITE);
 	int			n3[] = {8, 12, 30, 17};
 	i = -1;
@@ -291,7 +291,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_strcat.c
+	// ft_strcat.c
 	printf(YELLOW"ft_strcat :\n"WHITE);
 	i = -1;
 	j = 0;
@@ -314,7 +314,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_strncat.c
+	// ft_strncat.c
 	printf(YELLOW"ft_strncat :\n"WHITE);
 	int			n4[] =
 	{
@@ -345,7 +345,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_toupper.c
+	// ft_toupper.c
 	printf(YELLOW"ft_toupper :\n"WHITE);
 	char		c2[] = {'a', 'A', 'z', 'Z', '0', '9', ' ', '~', 14, 127};
 	i = -1;
@@ -369,7 +369,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_tolower.c
+	// ft_tolower.c
 	printf(YELLOW"ft_tolower :\n"WHITE);
 	i = -1;
 	j = 0;
@@ -392,7 +392,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_isalpha.c	
+	// ft_isalpha.c	
 	printf(YELLOW"ft_isalpha :\n"WHITE);
 	i = -1;
 	j = 0;
@@ -415,7 +415,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_isdigit.c	
+	// ft_isdigit.c	
 	printf(YELLOW"ft_isdigit :\n"WHITE);
 	i = -1;
 	j = 0;
@@ -438,7 +438,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_isalpha.c	
+	// ft_isalpha.c	
 	printf(YELLOW"ft_isalnum :\n"WHITE);
 	i = -1;
 	j = 0;
@@ -461,7 +461,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_isascii.c	
+	// ft_isascii.c	
 	printf(YELLOW"ft_isascii :\n"WHITE);
 	i = -1;
 	j = 0;
@@ -484,7 +484,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_isprint.c	
+	// ft_isprint.c	
 	printf(YELLOW"ft_isprint :\n"WHITE);
 	i = -1;
 	j = 0;
@@ -507,7 +507,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_atoi.c
+	// ft_atoi.c
 	printf(YELLOW"ft_atoi :\n"WHITE);
 	char		s5[10][30] =
 	{
@@ -543,7 +543,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_itoa.c
+	// ft_itoa.c
 	printf(YELLOW"ft_itoa :\n"WHITE);
 	int			n5[] = {0, INT_MIN, INT_MAX, 3245, -453, 10, -10, -9, 5, -100};
 	i = -1;
@@ -566,7 +566,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_strstr.c
+	// ft_strstr.c
 	printf(YELLOW"ft_strstr :\n"WHITE);
 	char		s6[5][50] =
 	{
@@ -616,7 +616,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-    //ft_strnstr.c
+	// ft_strnstr.c
 	printf(YELLOW"ft_strnstr :\n"WHITE);
 	int			n6[] = {5, 3, 3, 2, 0};
 	i = -1;
@@ -652,7 +652,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-    //ft_strchr.c
+	// ft_strchr.c
 	printf(YELLOW"ft_strchr :\n"WHITE);
 	int			c3[] = {'l', 'n', '\0', 'w', 'e'};
 	i = -1;
@@ -687,7 +687,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-    //ft_strrchr.c
+	// ft_strrchr.c
 	printf(YELLOW"ft_strrchr :\n"WHITE);
 	i = -1;
 	j = 0;
@@ -721,11 +721,12 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-    //ft_memalloc.c
+	// ft_memalloc.c
 	printf(YELLOW"ft_memalloc :\n"WHITE);
 	char		*s8;
-	s8 = (char*)ft_memalloc(42);
-	i  = -1;
+	if (!(s8 = (char*)ft_memalloc(42)))
+		return (0);
+	i = -1;
 	j = 0;
 	while (s8[++i] < 42)
 		if (s8[i] != 0)
@@ -734,20 +735,20 @@ int			main(int ac, char **av)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
-	
+
 	ft_wait();
 
-    //ft_memdel.c
+	// ft_memdel.c
 	printf(YELLOW"ft_memdel :\n"WHITE);
 	ft_memdel((void**)&s8);
 	if (s8 == 0)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
-	
+
 	ft_wait();
 
-    //ft_strnew.c
+	// ft_strnew.c
 	printf(YELLOW"ft_strnew :\n"WHITE);
 	s8 = (char*)ft_strnew(42);
 	i  = -1;
@@ -759,10 +760,10 @@ int			main(int ac, char **av)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
-	
+
 	ft_wait();
 
-    //ft_memdel.c
+	// ft_memdel.c
 	printf(YELLOW"ft_strdel :\n"WHITE);
 	ft_strdel(&s8);
 	if (s8 == 0)
@@ -772,7 +773,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-    //ft_strclr.c
+	// ft_strclr.c
 	printf(YELLOW"ft_strclr :\n"WHITE);
 	s8 = ft_strnew(3);
 	s8[0] = 'a';
@@ -786,7 +787,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-    //ft_striter.c
+	// ft_striter.c
 	printf(YELLOW"ft_striter :\n"WHITE);
 	char		s9[] = "test de str";
 	printf("\tprintf         -> %s\n\tft_striter(f1) -> ", s9);
@@ -799,7 +800,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-    //ft_striteri.c
+	// ft_striteri.c
 	printf(YELLOW"ft_striteri :\n"WHITE);
 	printf("\tprintf          -> %s\n\tft_striteri(f2) -> ", s9);
 	ft_striteri(s9, &ft_f2);
@@ -808,10 +809,10 @@ int			main(int ac, char **av)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
-	
+
 	ft_wait();
 
-    //ft_strmap.c
+	// ft_strmap.c
 	printf(YELLOW"ft_strmap :\n"WHITE);
 	char		*s10;
 	s10 = ft_strmap(s9, &ft_f3);
@@ -820,10 +821,10 @@ int			main(int ac, char **av)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
-	
+
 	ft_wait();
 
-    //ft_strmapi.c
+	// ft_strmapi.c
 	printf(YELLOW"ft_strmapi :\n"WHITE);
 	s10 = ft_strmapi(s9, &ft_f4);
 	printf("\tprintf            -> %s\n\tft_strmapi(ft_f4) -> %s\n", s9, s10);
@@ -834,7 +835,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_strequ.c
+	// ft_strequ.c
 	printf(YELLOW"ft_strequ :\n"WHITE);
 	char	s11[4][100] =
 	{
@@ -855,7 +856,8 @@ int			main(int ac, char **av)
 	while (++i < 4)
 	{
 		printf("\ts1 -> %s\n\ts11 -> %s\n\tstrcmp    -> %d\n\tft_strequ -> "
-				"%d\n\t", s12[i], s11[i], strcmp(s12[i], s11[i]),
+				"%d\n\t", s12[i], s11[i], 
+				strcmp(s12[i], s11[i]),
 				ft_strequ(s12[i], s11[i]));
 		if ((strcmp(s12[i], s11[i]) == 0 && ft_strequ(s12[i], s11[i]) == 1) ||
 				(strcmp(s12[i], s11[i]) != 0 && ft_strequ(s12[i], s11[i]) == 0))
@@ -870,10 +872,10 @@ int			main(int ac, char **av)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
-	
+
 	ft_wait();
 
-	//ft_strnequ.c
+	// ft_strnequ.c
 	printf(YELLOW"ft_strnequ :\n"WHITE);
 	i = -1;
 	j = 0;
@@ -898,7 +900,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_strsub.c
+	// ft_strsub.c
 	printf(YELLOW"ft_strsub :\n"WHITE);
 	int			n7[] = {0, 4, 6, 5};
 	int			n8[] = {ft_strlen(s11[0]), 8, 6, ft_strlen(s11[3]) - 5};
@@ -912,7 +914,7 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//ft_strjoin.c
+	// ft_strjoin.c
 	printf(YELLOW"ft_strjoin :\n"WHITE);
 	i = -1;
 	j = 0;
@@ -932,10 +934,10 @@ int			main(int ac, char **av)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
-	
+
 	ft_wait();
 
-	//ft_strstrim.c
+	// ft_strstrim.c
 	printf(YELLOW"ft_strstrim :\n"WHITE);
 	char	s13[6][100] =
 	{
@@ -953,7 +955,9 @@ int			main(int ac, char **av)
 				ft_strtrim(s13[i]));
 	VERIFY_MSG;
 
-	//ft_strsplit.c
+	ft_wait();
+
+	// ft_strsplit.c
 	printf(YELLOW"ft_strplit :\n"WHITE);
 	char		s14[7][100] =
 	{
@@ -981,6 +985,155 @@ int			main(int ac, char **av)
 		}
 	}
 	VERIFY_MSG;
-		
+
+	ft_wait();
+
+	// ft_memset.c
+	printf(YELLOW"ft_ memset:\n"WHITE);
+	char		**s16;
+	if (!(s16 = malloc(sizeof(*s16) * 2)))
+		return (0);
+	if (!(s16[0] = malloc(sizeof(**s16) * 12)))
+		return (0);
+	if (!(s16[1] = malloc(sizeof(**s16) * 12)))
+		return (0);
+	s16[0] = (char*)memset((void*)s16[0], 'a', 11);
+	s16[0][11] = '\0';
+	s16[1] = (char*)ft_memset((void*)s16[1], 'a', 11);
+	s16[1][11] = '\0';
+	if (strcmp(s16[0], s16[1]) == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+
+	ft_wait();
+
+	// ft_bzero.c
+	printf(YELLOW"ft_ bzero:\n"WHITE);
+	bzero((void*)s16[0], 12);
+	ft_bzero((void*)s16[1], 12);
+	if (strcmp(s16[0], s16[1]) == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+
+	ft_wait();
+
+	// ft_strdup.c
+	printf(YELLOW"ft_ strdup:\n"WHITE);
+	char		**s17;
+	if (!(s17 = malloc(sizeof(**s17) * 2)))
+		return (0);
+	strcpy(s16[0], "seksek");
+	s17[0] = strdup(s16[0]);
+	s17[1] = ft_strdup(s16[0]);
+	printf("\ts         -> %s\n\tstrdup    -> %s\n\tft_strdup -> %s\n", s16[0],
+			s17[0], s17[1]);
+	if (strcmp(s17[0], s17[1]) == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+
+	ft_wait();
+
+	// ft_memcpy.c
+	printf(YELLOW"ft_ memcpy:\n"WHITE);
+/*	if (!(s17 = malloc(sizeof(**s17) * 2)))
+		return (0);
+	strcpy(s16[0], "seksek");
+	memcpy((char*)s17[0], (char*)s16[0]);
+	ft_memcpy((char*)s17[0], (char*)s16[0]);
+	printf("\ts         -> %s\n\tmemcpy    -> %s\n\tft_memcpy -> %s\n", s16[0],
+			s17[0], s17[1]);
+	if (strcmp(s17[0], s17[1]) == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+*/
+	ft_wait();
+
+	// ft_memcpy.c
+	printf(YELLOW"ft_memcpy :\n"WHITE);
+/*	char	s18[4][100] =
+	{
+		"la str 1",
+		"une autre str pour des tests",
+		"encore une str",
+		"et... la derniere"
+	};
+	char		s19[4][100] =
+	{
+		"la str 1",
+		"une autre str pour des tests plus long",
+		"encore",
+		""
+	};
+	i = -1;
+	j = 0;
+	while (++i < 4)
+	{
+		printf("\ts1 -> %s\n\ts18 -> %s\n\tmemcpy	-> %d\n\tft_memcpy -> "
+				"%d\n\t", s19[i], s18[i], memcpy(s19[i], s18[i]),
+				ft_memcpy(s19[i], s18[i]));
+		if (memcpy(s19[i], s18[i]) == ft_memcpy(s19[i], s18[i]))
+			SUCCESS_MSG;
+		else
+		{
+			FAILURE_MSG;
+			j = 1;
+		}
+	}
+	if (j == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+*/	
+	ft_wait();
+
+	// ft_strlcat.c
+	printf(YELLOW"ft_strlcat :\n"WHITE);
+	char	s20[4][100] =
+	{
+		"a",
+		"bksdffhda soafsfo",
+		"seksek",
+		"d"
+	};
+	char	s21[4][100] =
+	{
+		"a",
+		"bksdffhda soafsfo",
+		"seksek",
+		"d"
+	};
+	char		s22[4][100] =
+	{
+		"1",
+		"2das fjalfafl",
+		"",
+		"4"
+	};
+	size_t		n9[4] = {3, 10, 3, 100};
+	i = -1;
+	j = 0;
+	while (++i < 4)
+	{
+		printf("\ts1 -> %s\n\ts2 -> %s\n", s20[i], s22[i]);
+		printf("\tstrlcat    -> %zu\t%s\n\tft_strlcat -> %zu\t%s\n\t", 
+				strlcat(s20[i], s22[i], n9[i]), s20[i],
+				ft_strlcat(s21[i], s22[i], n9[i]), s21[i]);
+		if (strlcat(s20[i], s22[i], n9[i]) == ft_strlcat(s21[i], s22[i], n9[i]))
+			SUCCESS_MSG;
+		else
+		{
+			FAILURE_MSG;
+			j = 1;
+		}
+	}
+	if (j == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+
 	return(0);
 }
