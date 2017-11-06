@@ -12,13 +12,9 @@
 
 NAME = libft.a
 
-NAME_EXE = ../libft_test
+INC_DIR = includes
 
-MAIN_C = ../main.c
-
-MAIN_O = main.o
-
-C_FILES = ft_strlen.c \
+FILES = ft_strlen.c \
 		  ft_putchar.c \
 		  ft_putstr.c \
 		  ft_putendl.c \
@@ -61,29 +57,27 @@ C_FILES = ft_strlen.c \
 		  ft_strjoin.c \
 		  ft_strtrim.c \
 		  ft_strsplit.c \
-#		  ft_memset.c \
-		  ft_bzero.c \
 		  ft_strdup.c \
-		  ft_memcpy.c \
-		  ft_memcmp.c \
-		  ft_strlcat.c
+#		  ft_strlcat.c
 
-O_FILES = $(C_FILES:.c=.o)
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 
-FLAGS = -Wall -Wextra -Werror
-
-LIB = ""
+INC := $(addprefix -I , $(INC_DIR))
+SRCS := $(addprefix srcs/, $(FILES))
+OBJ := $(addprefix obj/, $(FILES:.c=.o))
 
 all: $(NAME)
 
-$(NAME):
-	gcc -c $(C_FILES) $(FLAGS) $(LIB)
-	ar rc $(NAME) $(O_FILES)
-	rm $(O_FILES)
+$(NAME): $(OBJ)
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
+obj/%.o: srcs/%.c
+	$(CC) -c $(INC) $< -o $@ $(CFLAGS)
+
 clean:
-	rm -f $(O_FILES)
+	rm -f $(OBJ)
 
 clean_swp:
 	find . -name "*~" -o -name "#*#" -o -name ".*.swp" -delete -print
@@ -93,46 +87,12 @@ fclean: clean clean_swp
 
 re: fclean all
 
-m_all:
-	gcc -c $(C_FILES) $(MAIN_C) $(FLAGS) $(LIB)
-	ar rc $(NAME) $(O_FILES)
-	rm $(O_FILES)
-	ranlib $(NAME)
-	gcc -o $(NAME_EXE) $(MAIN_O) $(NAME) $(FLAGS)
-
-m_re: fclean m_all
-
-m_noflags: fclean
-	gcc -c $(C_FILES) $(MAIN_C) $(LIB)
-	ar rc $(NAME) $(O_FILES)
-	rm $(O_FILES)
-	ranlib $(NAME)
-	gcc -o $(NAME_EXE) $(MAIN_O) $(NAME)
-
 open:
-	vim +12 `find . -iname "*.c" -o -iname "*.h" -o -iname "*.txt" \
-		-o -iname "Makefile"`
+	@vim +12 `find .. -iname "*.c" -o -iname "*.h" -o -iname "*.txt" \
+		-o -iname "Makefile" -o -iname ".gitignore" -o -iname "~/.vimrc" \
+	   -o -iname "~/.vim/vim_help_file"`
 
-m_open:
-	vim +12 `find . -iname "*.c" -o -iname "*.h" -o -iname "*.txt" \
-		-o -iname "Makefile"` ../main.c
-
-m_compil:
-	clear
-	make m_re
-	make clean
-	find . -iname "main.o" -delete
-	@echo ""
-
-m_exec:
-	make m_compil
-	./$(NAME_EXE)
-
-gadd: clean clean_swp
-	git add -A
-
-gcommit: gadd
-	git commit -m "commit"
-
-gpush: gcommit
-	git push
+exec: all
+	@clear
+	$(CC) ../main.c -o ../libft_test $(INC) $(OBJ) $(CFLAGS)
+	@../libft_test

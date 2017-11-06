@@ -12,13 +12,13 @@
 
 obligatoire :
 	fonction libc :
-		-> memset
-		-> bzero
-		-x memcpy
+		memset
+		bzero
+		memcpy
 		memccpy
 		memmove
 		memchr
-		-x memcmp
+		memcmp
 		-> strlen
 		-> strdup -> modifie errno : faut le faire aussi ?
 		-> strcpy

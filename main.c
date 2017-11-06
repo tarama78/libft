@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include <limits.h>
 #include <ctype.h>
-#include "rendu/libft.h"
+#include <libft.h>
 
 #define NORMAL	"\x1B[0m"
 #define RED  "\x1B[31m"
@@ -988,40 +988,14 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	// ft_memset.c
-	printf(YELLOW"ft_ memset:\n"WHITE);
-	char		**s16;
-	if (!(s16 = malloc(sizeof(*s16) * 2)))
-		return (0);
-	if (!(s16[0] = malloc(sizeof(**s16) * 12)))
-		return (0);
-	if (!(s16[1] = malloc(sizeof(**s16) * 12)))
-		return (0);
-	s16[0] = (char*)memset((void*)s16[0], 'a', 11);
-	s16[0][11] = '\0';
-	s16[1] = (char*)ft_memset((void*)s16[1], 'a', 11);
-	s16[1][11] = '\0';
-	if (strcmp(s16[0], s16[1]) == 0)
-		SUCCESS_MSG;
-	else
-		FAILURE_MSG;
-
-	ft_wait();
-
-	// ft_bzero.c
-	printf(YELLOW"ft_ bzero:\n"WHITE);
-	bzero((void*)s16[0], 12);
-	ft_bzero((void*)s16[1], 12);
-	if (strcmp(s16[0], s16[1]) == 0)
-		SUCCESS_MSG;
-	else
-		FAILURE_MSG;
-
-	ft_wait();
-
 	// ft_strdup.c
 	printf(YELLOW"ft_ strdup:\n"WHITE);
+	char		**s16;
 	char		**s17;
+	if (!(s16 = malloc(sizeof(**s16) * 2)))
+		return (0);
+	if (!(s16[0] = malloc(sizeof(*s16) * 7)))
+		return (0);
 	if (!(s17 = malloc(sizeof(**s17) * 2)))
 		return (0);
 	strcpy(s16[0], "seksek");
@@ -1035,105 +1009,6 @@ int			main(int ac, char **av)
 		FAILURE_MSG;
 
 	ft_wait();
-
-	// ft_memcpy.c
-	printf(YELLOW"ft_ memcpy:\n"WHITE);
-/*	if (!(s17 = malloc(sizeof(**s17) * 2)))
-		return (0);
-	strcpy(s16[0], "seksek");
-	memcpy((char*)s17[0], (char*)s16[0]);
-	ft_memcpy((char*)s17[0], (char*)s16[0]);
-	printf("\ts         -> %s\n\tmemcpy    -> %s\n\tft_memcpy -> %s\n", s16[0],
-			s17[0], s17[1]);
-	if (strcmp(s17[0], s17[1]) == 0)
-		SUCCESS_MSG;
-	else
-		FAILURE_MSG;
-*/
-	ft_wait();
-
-	// ft_memcpy.c
-	printf(YELLOW"ft_memcpy :\n"WHITE);
-/*	char	s18[4][100] =
-	{
-		"la str 1",
-		"une autre str pour des tests",
-		"encore une str",
-		"et... la derniere"
-	};
-	char		s19[4][100] =
-	{
-		"la str 1",
-		"une autre str pour des tests plus long",
-		"encore",
-		""
-	};
-	i = -1;
-	j = 0;
-	while (++i < 4)
-	{
-		printf("\ts1 -> %s\n\ts18 -> %s\n\tmemcpy	-> %d\n\tft_memcpy -> "
-				"%d\n\t", s19[i], s18[i], memcpy(s19[i], s18[i]),
-				ft_memcpy(s19[i], s18[i]));
-		if (memcpy(s19[i], s18[i]) == ft_memcpy(s19[i], s18[i]))
-			SUCCESS_MSG;
-		else
-		{
-			FAILURE_MSG;
-			j = 1;
-		}
-	}
-	if (j == 0)
-		SUCCESS_MSG;
-	else
-		FAILURE_MSG;
-*/	
-	ft_wait();
-
-	// ft_strlcat.c
-	printf(YELLOW"ft_strlcat :\n"WHITE);
-	char	s20[4][100] =
-	{
-		"a",
-		"bksdffhda soafsfo",
-		"seksek",
-		"d"
-	};
-	char	s21[4][100] =
-	{
-		"a",
-		"bksdffhda soafsfo",
-		"seksek",
-		"d"
-	};
-	char		s22[4][100] =
-	{
-		"1",
-		"2das fjalfafl",
-		"",
-		"4"
-	};
-	size_t		n9[4] = {3, 10, 3, 100};
-	i = -1;
-	j = 0;
-	while (++i < 4)
-	{
-		printf("\ts1 -> %s\n\ts2 -> %s\n", s20[i], s22[i]);
-		printf("\tstrlcat    -> %zu\t%s\n\tft_strlcat -> %zu\t%s\n\t", 
-				strlcat(s20[i], s22[i], n9[i]), s20[i],
-				ft_strlcat(s21[i], s22[i], n9[i]), s21[i]);
-		if (strlcat(s20[i], s22[i], n9[i]) == ft_strlcat(s21[i], s22[i], n9[i]))
-			SUCCESS_MSG;
-		else
-		{
-			FAILURE_MSG;
-			j = 1;
-		}
-	}
-	if (j == 0)
-		SUCCESS_MSG;
-	else
-		FAILURE_MSG;
-
-	return(0);
+	
+	return (EXIT_SUCCESS);
 }
