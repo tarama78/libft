@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/18 13:39:55 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/07 13:44:25 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/07 14:31:26 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,14 @@ obligatoire :
 		-> memccpy
 		-> memmove
 		-> memchr
-		- memcmp
+		-> memcmp
 		-> strlen
-		-> strdup -> modifie errno : faut le faire aussi ?
+		-> strdup
 		-> strcpy
 		-> strncpy
 		-> strcat
 		-> strncat
-		strlcat
+		- strlcat
 		-> strchr
 		-> strrchr
 		-> strstr

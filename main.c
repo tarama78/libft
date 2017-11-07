@@ -27,7 +27,7 @@
 #define CYAN  "\x1B[36m"
 #define WHITE  "\x1B[37m"
 #define SUCCESS_MSG printf(GREEN"<<< SUCCESS >>>\n\n"WHITE)
-#define FAILURE_MSG printf(RED"<<< FAILURE >>>\n\n"WHITE)
+#define FAILURE_MSG printf(RED"<<< FAILURE >>>%s\n\n"WHITE, (ok = 1)?"":"")
 #define VERIFY_MSG printf(BLUE"<<< VERIFY THE RESULT >>>\n\n"WHITE)
 #define NOT_TESTED_MSG printf(MAGENTA"<<< FUNCTION NOT TESTED >>>\n\n"WHITE)
 #define NEWLINE ft_putchar('\n')
@@ -67,6 +67,7 @@ int			main(int ac, char **av)
 {
 	int		i;
 	int		j;
+	int		ok = 0;
 	(void)ac;
 	(void)av;
 
@@ -1170,5 +1171,63 @@ int			main(int ac, char **av)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
+
+	ft_wait();
+
+	// ft_strlcat.c
+	printf(YELLOW"ft_strlcat :\n"WHITE);
+	char	s27[4][100] =
+	{
+		"la str 1",
+		"une autre str pour des tests",
+		"encore une str",
+		"et... la derniere"
+	};
+	char		s28[4][100] =
+	{
+		"la str 1",
+		"une autre str pour des tests plus long",
+		"encore",
+		""
+	};
+	char		*s29[4];
+	int			n10[] =
+	{
+		ft_strlen(s28[i]) + ft_strlen(s27[i]),
+		5,
+		16,
+		0
+	};
+	i = -1;
+	j = 0;
+	while (++i < 4)
+	{
+		s29[i] = ft_strdup(s28[i]);
+		printf("\tdst -> %s\n\tsrc -> %s\n\tn -> %d\n", s27[i], s28[i], n10[i]);
+		printf("\tstrlcat    %lu -> ", strlcat(s29[i], s27[i], n10[i]));
+		printf("%s\n", s29[i]);
+		s29[i] = ft_strdup(s28[i]);
+		printf("\tft_strlcat %lu -> ", ft_strlcat(s29[i], s27[i], n10[i]));
+		printf("%s\n\t", s29[i]);
+		s29[i] = ft_strdup(s28[i]);
+		if (strlcat(s28[i], s27[i], n10[i]) ==
+				ft_strlcat(s29[i], s27[i], n10[i]))
+			SUCCESS_MSG;
+		else
+		{
+			FAILURE_MSG;
+			j = 1;
+		}
+	}
+	if (j == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+
+	printf(YELLOW"all:\n"WHITE);
+	if (ok == 1)
+		FAILURE_MSG;
+	else
+		SUCCESS_MSG;
 	return (EXIT_SUCCESS);
 }

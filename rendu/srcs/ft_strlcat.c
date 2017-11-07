@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:47:54 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/07 14:21:59 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/11/07 14:38:57 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/11/07 15:33:43 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <libft.h>
 
-void		*ft_memalloc(size_t size)
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	void	*ret;
+	int		i;
+	int		j;
 
-	if (!(ret = malloc(size)))
-		return (NULL);
-	while (--size > 0)
-		((char*)ret)[size] = 0;
-	((char*)ret)[0] = 0;
-	return (ret);
+	i = -1;
+	while (dst[++i])
+		;
+	j = -1;
+	while (src[++j] && size-- - ft_strlen(dst) - 1 > 0)
+		dst[i + j] = src[j];
+	dst[i + j] = '\0';
+	return (i + ft_strlen(src));
 }
