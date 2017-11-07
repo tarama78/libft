@@ -1230,10 +1230,52 @@ int			main(int ac, char **av)
 	else
 		FAILURE_MSG;
 
+	ft_wait();
+
+	//list
+	//ft_lstnew.c
+	printf(YELLOW"ft_lstnew :\n"WHITE);
+	t_list		*list1;
+	char		*content1 = ft_strdup("content");
+	size_t		content_size1 = ft_strlen(content1);
+
+	list1 = ft_lstnew(content1, content_size1);
+	j = 0;
+	if (memcmp(content1, list1->content, content_size1) != 0)
+	{
+		printf(RED"\tERROR :"WHITE" content != list1->content\n");
+		j = 1;
+	}
+	if (content_size1 != list1->content_size)
+	{
+		printf(RED"\tERROR :"WHITE" content_size != list1->content_size\n");
+		j = 1;
+	}
+	if (list1->next != NULL)
+	{
+		printf(RED"\tERROR :"WHITE" list1->next != NULL\n");
+		j = 1;
+	}
+	if (content1 == list1->content)
+	{
+		printf(RED"\tERROR :"WHITE" content1 and list1->content are the same "
+				"variable not copy\n");
+		j = 1;
+	}
+	if (j == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+	
+	
+	
+	
+	////////////////////////////////////////////////////////////////////////////
 	printf(YELLOW"all:\n"WHITE);
 	if (ok == 1)
 		FAILURE_MSG;
 	else
 		SUCCESS_MSG;
+	////////////////////////////////////////////////////////////////////////////
 	return (EXIT_SUCCESS);
 }

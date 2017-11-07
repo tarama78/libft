@@ -65,7 +65,8 @@ FILES = ft_strlen.c \
 		  ft_memmove.c \
 		  ft_memchr.c \
 		  ft_memcmp.c \
-		  ft_strlcat.c
+		  ft_strlcat.c \
+		  list/ft_lstnew.c
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
