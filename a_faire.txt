@@ -6,17 +6,17 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/18 13:39:55 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/07 09:42:32 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/07 11:28:45 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 obligatoire :
 	fonction libc :
-		memset
-		bzero
-		memcpy
-		memccpy
-		memmove
+		-> memset
+		-> bzero
+		-> memcpy
+		-> memccpy
+		- memmove
 		memchr
 		memcmp
 		-> strlen
@@ -29,7 +29,7 @@ obligatoire :
 		-> strchr
 		-> strrchr
 		-> strstr
-		-x strnstr -> je comprend pas trop la fonct
+		-> strnstr
 		-> strcmp
 		-> strncmp
 		-> atoi
@@ -42,9 +42,9 @@ obligatoire :
 		-> tolower
 
 	fonction supplementaire :
-		-> ft_memalloc
+		-x ft_memalloc -> random
 		-> ft_memdel
-		-> ft_strnew
+		-x ft_strnew -> random
 		-> ft_strdel
 		-> ft_strclr
 		-> ft_striter

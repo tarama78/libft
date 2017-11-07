@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:52:39 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/07 09:52:42 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/11/07 11:32:05 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/11/07 11:39:37 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <libft.h>
 
-void		ft_putendl_fd(const char *s, int fd)
+void		*ft_memmove(void *dst, const void *src, size_t len)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	char	*tmp;
+
+	if (!(tmp = malloc(sizeof(*tmp) * len)))
+		return (NULL);
+	ft_memcpy(tmp, src, len);
+	ft_memcpy(dst, tmp, len);
+	free(tmp);
+	return (dst);
 }

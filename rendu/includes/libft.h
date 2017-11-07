@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/18 13:18:11 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/09/18 13:18:11 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/11/07 09:45:23 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/11/07 11:39:26 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,10 @@ char		*ft_strjoin(const char *s1, const char *s2);
 char		*ft_strtrim(const char *s);
 char		**ft_strsplit(const char *s, char c);
 char		*ft_strdup(const char *s1);
+void		*ft_memset(void *b, int c, size_t len);
+void		ft_bzero(void *s, size_t n);
+void		*ft_memcpy(void *dst, const void *src, size_t n);
+void		*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void		*ft_memmove(void *dst, const void *src, size_t len);
 
 #endif

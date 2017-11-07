@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/09/15 17:00:50 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/07 09:42:26 by tnicolas         ###   ########.fr        #
+#    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
+#    Updated: 2017/11/07 11:29:02 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,11 @@ FILES = ft_strlen.c \
 		  ft_strtrim.c \
 		  ft_strsplit.c \
 		  ft_strdup.c \
+		  ft_memset.c \
+		  ft_bzero.c \
+		  ft_memcpy.c \
+		  ft_memccpy.c \
+		  ft_memmove.c
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror

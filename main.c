@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*																			  */
 /*														  :::	   ::::::::   */
-/*	 ../main.c											:+:		 :+:	:+:   */
+/*	 main.c												:+:		 :+:	:+:   */
 /*													  +:+ +:+		  +:+	  */
 /*	 By: tnicolas <marvin@42.fr>					+#+  +:+	   +#+		  */
 /*												  +#+#+#+#+#+	+#+			  */
-/*	 Created: 2017/09/18 13:22:29 by tnicolas		   #+#	  #+#			  */
-/*	 Updated: 2017/09/18 13:22:29 by tnicolas		  ###	########.fr		  */
+/*	 Created: 2017/11/07 09:45:14 by tnicolas		   #+#	  #+#			  */
+/*	 Updated: 2017/11/07 11:22:57 by tnicolas		  ###	########.fr		  */
 /*																			  */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 #define CYAN  "\x1B[36m"
 #define WHITE  "\x1B[37m"
 #define SUCCESS_MSG printf(GREEN"<<< SUCCESS >>>\n\n"WHITE)
-#define FAILURE_MSG printf(RED"<<< FAILLURE >>>\n\n"WHITE)
+#define FAILURE_MSG printf(RED"<<< FAILURE >>>\n\n"WHITE)
 #define VERIFY_MSG printf(BLUE"<<< VERIFY THE RESULT >>>\n\n"WHITE)
 #define NOT_TESTED_MSG printf(MAGENTA"<<< FUNCTION NOT TESTED >>>\n\n"WHITE)
 #define NEWLINE ft_putchar('\n')
@@ -623,7 +623,7 @@ int			main(int ac, char **av)
 	j = 0;
 	while (++i < 5)
 	{
-		printf("\tstrnstr    %s :: %s %d -> %s\n\tft_strnstr %s :: %s %d -> %s\n"
+		printf("\tstrnstr	 %s :: %s %d -> %s\n\tft_strnstr %s :: %s %d -> %s\n"
 				"\t", s6[i], s7[i], n6[i], strnstr(s6[i], s7[i], n6[i]), s6[i],
 				s7[i], n6[i], ft_strnstr(s6[i], s7[i], n6[i]));
 		if (strnstr(s6[i], s7[i], n6[i]) != NULL)
@@ -750,11 +750,12 @@ int			main(int ac, char **av)
 
 	// ft_strnew.c
 	printf(YELLOW"ft_strnew :\n"WHITE);
-	s8 = (char*)ft_strnew(42);
+	char		*s90;
+	s90 = (char*)ft_strnew(42);
 	i  = -1;
 	j = 0;
-	while (s8[++i] < 42)
-		if (s8[i] != 0)
+	while (s90[++i] < 42)
+		if (s90[i] != 0)
 			j = 1;
 	if (j == 0)
 		SUCCESS_MSG;
@@ -790,7 +791,7 @@ int			main(int ac, char **av)
 	// ft_striter.c
 	printf(YELLOW"ft_striter :\n"WHITE);
 	char		s9[] = "test de str";
-	printf("\tprintf         -> %s\n\tft_striter(f1) -> ", s9);
+	printf("\tprintf		 -> %s\n\tft_striter(f1) -> ", s9);
 	ft_striter(s9, &ft_f1);
 	printf("%s\n", s9);
 	if (strcmp(s9, "uftu!ef!tus") == 0)
@@ -802,7 +803,7 @@ int			main(int ac, char **av)
 
 	// ft_striteri.c
 	printf(YELLOW"ft_striteri :\n"WHITE);
-	printf("\tprintf          -> %s\n\tft_striteri(f2) -> ", s9);
+	printf("\tprintf		  -> %s\n\tft_striteri(f2) -> ", s9);
 	ft_striteri(s9, &ft_f2);
 	printf("%s\n", s9);
 	if (strcmp(s9, "vfuu\"eg!uut") == 0)
@@ -816,7 +817,7 @@ int			main(int ac, char **av)
 	printf(YELLOW"ft_strmap :\n"WHITE);
 	char		*s10;
 	s10 = ft_strmap(s9, &ft_f3);
-	printf("\tprintf           -> %s\n\tft_strmap(ft_f3) -> %s\n", s9, s10);
+	printf("\tprintf		   -> %s\n\tft_strmap(ft_f3) -> %s\n", s9, s10);
 	if (strcmp(s10, "uett!df tts") == 0)
 		SUCCESS_MSG;
 	else
@@ -827,7 +828,7 @@ int			main(int ac, char **av)
 	// ft_strmapi.c
 	printf(YELLOW"ft_strmapi :\n"WHITE);
 	s10 = ft_strmapi(s9, &ft_f4);
-	printf("\tprintf            -> %s\n\tft_strmapi(ft_f4) -> %s\n", s9, s10);
+	printf("\tprintf			-> %s\n\tft_strmapi(ft_f4) -> %s\n", s9, s10);
 	if (strcmp(s10, "uftu!ef!tus") == 0)
 		SUCCESS_MSG;
 	else
@@ -855,7 +856,7 @@ int			main(int ac, char **av)
 	j = 0;
 	while (++i < 4)
 	{
-		printf("\ts1 -> %s\n\ts11 -> %s\n\tstrcmp    -> %d\n\tft_strequ -> "
+		printf("\ts1 -> %s\n\ts11 -> %s\n\tstrcmp	 -> %d\n\tft_strequ -> "
 				"%d\n\t", s12[i], s11[i], 
 				strcmp(s12[i], s11[i]),
 				ft_strequ(s12[i], s11[i]));
@@ -881,7 +882,7 @@ int			main(int ac, char **av)
 	j = 0;
 	while (++i < 4)
 	{
-		printf("\ts1 -> %s\n\ts2 -> %s\n\tn  -> %d\n\tstrncmp    -> %d\n"
+		printf("\ts1 -> %s\n\ts2 -> %s\n\tn  -> %d\n\tstrncmp	 -> %d\n"
 				"\tft_strnequ -> %d\n\t", s12[i], s11[i], n2[i],
 				strncmp(s12[i], s11[i], n2[i]), ft_strnequ(s12[i], s11[i], n2[i]));
 		if ((strncmp(s12[i], s11[i], n2[i]) == 0 && ft_strnequ(s12[i], s11[i], n2[i]) == 1) ||
@@ -907,7 +908,7 @@ int			main(int ac, char **av)
 	i = -1;
 	while (++i < 4)
 	{
-		printf("\ts     -> %s\n\tstart -> %d\n\tlen   -> %d\n\tft_strsub -> %s\n"
+		printf("\ts		-> %s\n\tstart -> %d\n\tlen   -> %d\n\tft_strsub -> %s\n"
 				, s11[i], n7[i], n8[i], ft_strsub(s11[i], n7[i], n8[i]));
 	}
 	VERIFY_MSG;
@@ -941,12 +942,12 @@ int			main(int ac, char **av)
 	printf(YELLOW"ft_strstrim :\n"WHITE);
 	char	s13[6][100] =
 	{
-		"      la str 1         ",
+		"	   la str 1			",
 		"\t\t  \t\t\n une autre str pour des tests",
-		"encore une str\t\n     \t\t\n\n   \n",
+		"encore une str\t\n		\t\t\n\n   \n",
 		"et... la derniere",
 		"",
-		"      \t\t\n\n    \n\n"
+		"	   \t\t\n\n    \n\n"
 	};
 	i = -1;
 	j = 0;
@@ -1001,7 +1002,7 @@ int			main(int ac, char **av)
 	strcpy(s16[0], "seksek");
 	s17[0] = strdup(s16[0]);
 	s17[1] = ft_strdup(s16[0]);
-	printf("\ts         -> %s\n\tstrdup    -> %s\n\tft_strdup -> %s\n", s16[0],
+	printf("\ts			-> %s\n\tstrdup    -> %s\n\tft_strdup -> %s\n", s16[0],
 			s17[0], s17[1]);
 	if (strcmp(s17[0], s17[1]) == 0)
 		SUCCESS_MSG;
@@ -1009,6 +1010,79 @@ int			main(int ac, char **av)
 		FAILURE_MSG;
 
 	ft_wait();
-	
+
+	// ft_memset.c
+	printf(YELLOW"ft_memset:\n"WHITE);
+	char	*s18 = ft_strdup("test de memset");
+	ft_memset(s18, 'a', ft_strlen(s8));
+	i = -1;
+	j = 0;
+	while (++i < (int)ft_strlen(s8))
+	{
+		if (s8[i] != 'a')
+			j = 1;
+	}
+	if (j == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+
+	ft_wait();
+
+	// ft_bzero.c
+	printf(YELLOW"ft_bzero:\n"WHITE);
+	ft_bzero(s18, ft_strlen(s18));
+	i = -1;
+	j = 0;
+	while (++i < (int)ft_strlen(s18))
+	{
+		if (s18[i] != 0)
+			j = 1;
+	}
+	if (j == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+
+	ft_wait();
+
+	// ft_memcpy.c
+	printf(YELLOW"ft_memcpy:\n"WHITE);
+	char		*s19 = ft_strdup("seksek");
+	char		*s20 = ft_strdup("coucou");
+	ft_memcpy(s19, s20, ft_strlen(s19) + 1);
+	if (strcmp(s19, s20) == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+
+	ft_wait();
+
+	// ft_memccpy.c
+	printf(YELLOW"ft_memccpy:\n"WHITE);
+	char	*s21 = NULL;
+	s19 = ft_strdup("seksek a seksek");
+	s20 = ft_strdup("coucou seksek");
+	s21 = ft_strdup(s20);
+	memccpy(s19, s20, 'a', ft_strlen(s19) + 1);
+	ft_memccpy(s19, s21, 'a', ft_strlen(s19) + 1);
+	if (strcmp(s20, s21) == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+
+	ft_wait();
+
+	// ft_memmove.c
+	printf(YELLOW"ft_memmove:\n"WHITE);
+	s19 = ft_strdup("seksek a seksek");
+	s20 = ft_strdup("coucou seksek ls");
+	s21 = ft_strdup(s20);
+	memmove(s19, s20, ft_strlen(s19) + 1);
+	ft_memmove(s19, s21, ft_strlen(s19) + 1);
+	if (strcmp(s20, s21) == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
 	return (EXIT_SUCCESS);
 }

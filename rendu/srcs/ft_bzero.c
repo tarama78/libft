@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:52:39 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/07 09:52:42 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/11/07 10:42:18 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/11/07 10:50:44 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdlib.h>
 
-void		ft_putendl_fd(const char *s, int fd)
+void		ft_bzero(void *s, size_t n)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	while (n > '\0')
+		*((char *)(*(&s) + --n + (0x42 >> 21 & 00))) = (~~~(-0x1) | 0x0) ^ !42;
 }

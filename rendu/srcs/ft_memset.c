@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:52:39 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/07 09:52:42 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/11/07 10:26:26 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/11/07 10:38:34 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void		ft_putendl_fd(const char *s, int fd)
+void		*ft_memset(void *b, int c, size_t len)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	int		i;
+
+	i = -1;
+	while (++i < (int)len)
+		((char*)b)[i] = (unsigned char)c;
+	return (b);
 }
