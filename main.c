@@ -17,6 +17,7 @@
 #include <limits.h>
 #include <ctype.h>
 #include <libft.h>
+#include <libft.h>
 
 #define NORMAL	"\x1B[0m"
 #define RED  "\x1B[31m"
@@ -721,7 +722,7 @@ int			main(int ac, char **av)
 		FAILURE_MSG;
 
 	ft_wait();
-
+////////////////////////////////////////////////////////////////////////////////
 	// ft_memalloc.c
 	printf(YELLOW"ft_memalloc :\n"WHITE);
 	char		*s8;
@@ -732,23 +733,25 @@ int			main(int ac, char **av)
 	while (s8[++i] < 42)
 		if (s8[i] != 0)
 			j = 1;
-	if (j == 0)
+/*	if (j == 0)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
+*/
+	NOT_TESTED_MSG;
 
 	ft_wait();
 
 	// ft_memdel.c
 	printf(YELLOW"ft_memdel :\n"WHITE);
 	ft_memdel((void**)&s8);
-	if (s8 == 0)
+	if (s8 == NULL)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
 
 	ft_wait();
-
+///////////////////////////////////////////////////////////////////////////////
 	// ft_strnew.c
 	printf(YELLOW"ft_strnew :\n"WHITE);
 	char		*s90;
@@ -758,10 +761,12 @@ int			main(int ac, char **av)
 	while (s90[++i] < 42)
 		if (s90[i] != 0)
 			j = 1;
-	if (j == 0)
+/*	if (j == 0)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
+*/
+	NOT_TESTED_MSG;
 
 	ft_wait();
 
@@ -1179,7 +1184,7 @@ int			main(int ac, char **av)
 	char	s27[4][100] =
 	{
 		"la str 1",
-		"une autre str pour des tests",
+		"la deuxieme str pour des tests",
 		"encore une str",
 		"et... la derniere"
 	};
@@ -1187,13 +1192,13 @@ int			main(int ac, char **av)
 	{
 		"la str 1",
 		"une autre str pour des tests plus long",
-		"encore",
+		"une autre",
 		""
 	};
 	char		*s29[4];
 	int			n10[] =
 	{
-		ft_strlen(s28[i]) + ft_strlen(s27[i]),
+		ft_strlen(s28[0]) + ft_strlen(s27[0]) + 1,
 		5,
 		16,
 		0
@@ -1203,12 +1208,13 @@ int			main(int ac, char **av)
 	while (++i < 4)
 	{
 		s29[i] = ft_strdup(s28[i]);
-		printf("\tdst -> %s\n\tsrc -> %s\n\tn -> %d\n", s27[i], s28[i], n10[i]);
+		printf("\tdst -> '%s'\n\tsrc -> '%s'\n\tsize -> %d\n", s27[i], s28[i],
+				n10[i]);
 		printf("\tstrlcat    %lu -> ", strlcat(s29[i], s27[i], n10[i]));
-		printf("%s\n", s29[i]);
+		printf("'%s'\n", s29[i]);
 		s29[i] = ft_strdup(s28[i]);
 		printf("\tft_strlcat %lu -> ", ft_strlcat(s29[i], s27[i], n10[i]));
-		printf("%s\n\t", s29[i]);
+		printf("'%s'\n\t", s29[i]);
 		s29[i] = ft_strdup(s28[i]);
 		if (strlcat(s28[i], s27[i], n10[i]) ==
 				ft_strlcat(s29[i], s27[i], n10[i]))
