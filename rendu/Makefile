@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/07 11:29:02 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/07 13:44:39 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,9 @@ FILES = ft_strlen.c \
 		  ft_bzero.c \
 		  ft_memcpy.c \
 		  ft_memccpy.c \
-		  ft_memmove.c
+		  ft_memmove.c \
+		  ft_memchr.c \
+		  ft_memcmp.c
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror

@@ -1062,10 +1062,11 @@ int			main(int ac, char **av)
 	printf(YELLOW"ft_memccpy:\n"WHITE);
 	char	*s21 = NULL;
 	s19 = ft_strdup("seksek a seksek");
-	s20 = ft_strdup("coucou seksek");
+	s20 = ft_strdup("bbbbbbbbbbbbbbbbbbb");
 	s21 = ft_strdup(s20);
-	memccpy(s19, s20, 'a', ft_strlen(s19) + 1);
-	ft_memccpy(s19, s21, 'a', ft_strlen(s19) + 1);
+	memccpy(s20, s19, 'a', ft_strlen(s19) + 1);
+	ft_memccpy(s21, s19, 'a', ft_strlen(s19) + 1);
+	printf("\tsrc : %s\n\tmemccpy    : %s\n\tft_memccpy : %s\n", s19, s20, s21);
 	if (strcmp(s20, s21) == 0)
 		SUCCESS_MSG;
 	else
@@ -1078,9 +1079,94 @@ int			main(int ac, char **av)
 	s19 = ft_strdup("seksek a seksek");
 	s20 = ft_strdup("coucou seksek ls");
 	s21 = ft_strdup(s20);
-	memmove(s19, s20, ft_strlen(s19) + 1);
-	ft_memmove(s19, s21, ft_strlen(s19) + 1);
+	memmove(s20, s19, ft_strlen(s19) + 1);
+	ft_memmove(s21, s19, ft_strlen(s19) + 1);
+	printf("\tmemmove    : %s\n\tft_memmove : %s\n", s20, s21);
 	if (strcmp(s20, s21) == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+	
+	ft_wait();
+
+	// ft_memchr.c
+	printf(YELLOW"ft_memchr:\n"WHITE);
+	s21 = ft_strdup("je cherche dans cette chaine.");
+	char	s22[5] = {'j', '.', '\0', 'd', '-'};
+	char	*s23;
+	char	*s24;
+	printf("\tsrc : %s\n", s21);
+	i = -1;
+	j = 0;
+	while (++i < 5)
+	{
+		s23 = memchr(s21, s22[i], ft_strlen(s21) + 1);
+		s24 = ft_memchr(s21, s22[i], ft_strlen(s21) + 1);
+		printf("\tmemchr    %c : %s\n\tft_memchr %c : %s\n\t", s22[i], s23,
+				s22[i], s24);
+		if (s23 == NULL || s24 == NULL)
+		{
+			if (s23 == s24)
+				SUCCESS_MSG;
+			else
+			{
+				j = 1;
+				FAILURE_MSG;
+			}
+		}
+		else if (strcmp(s23, s24) != 0)
+		{
+			j = 1;
+			FAILURE_MSG;
+		}
+		else
+			SUCCESS_MSG;
+	}
+	if (j == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+
+	ft_wait();
+
+	// ft_memcmp.c
+	printf(YELLOW"ft_memcmp :\n"WHITE);
+	char	s25[4][100] =
+	{
+		"la str 1",
+		"une autre str pour des tests",
+		"encore une str",
+		"et... la derniere"
+	};
+	char		s26[4][100] =
+	{
+		"la str 1",
+		"une autre str pour des tests plus long",
+		"encore",
+		""
+	};
+	int		n9[] = {
+		ft_strlen(s25[0]) + 5,
+		ft_strlen(s26[1]) - 2,
+		0,
+		5
+	};
+	i = -1;
+	j = 0;
+	while (++i < 4)
+	{
+		printf("\ts1 -> %s\n\ts2 -> %s\n\tn  -> %d\n\tmemcmp	 -> %d\n"
+				"\tft_memcmp -> %d\n\t", s26[i], s25[i], n9[i],
+				memcmp(s26[i], s25[i], n9[i]), ft_memcmp(s26[i], s25[i], n9[i]));
+		if (memcmp(s26[i], s25[i], n9[i]) == ft_memcmp(s26[i], s25[i], n9[i]))
+			SUCCESS_MSG;
+		else
+		{
+			FAILURE_MSG;
+			j = 1;
+		}
+	}
+	if (j == 0)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
