@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:45:44 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/08 14:00:05 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/11/08 16:47:12 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/11/08 16:47:14 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@ int			ft_atoi(const char *nptr)
 	int		ret;
 	int		neg;
 
-	ret = 0;
-	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n' || *nptr == '\v' ||
-		*nptr == '\f' || *nptr == '\r')
+	while (!(ret = 0) && (*nptr == ' ' || *nptr == '\t' || *nptr == '\n' ||
+			*nptr == '\v' || *nptr == '\f' || *nptr == '\r'))
 		++nptr;
 	neg = (*nptr == '-') ? -1 : 1;
 	nptr = (*nptr == '-' || *nptr == '+') ? nptr : nptr - 1;
