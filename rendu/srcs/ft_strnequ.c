@@ -19,9 +19,5 @@ int			ft_strnequ(const char *s1, const char *s2, size_t n)
 		s1++;
 		s2++;
 	}
-<<<<<<< HEAD
 	return ((*s1 == *s2 || n == 0) ? (1) : (0));
-=======
-	return ((*s1 == *s2) ? 1 : 0);
->>>>>>> e3a2889c7c99c6021b0feaac34f596980b607e74
 }
