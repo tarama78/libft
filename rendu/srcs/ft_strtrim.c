@@ -22,7 +22,7 @@ char		*ft_strtrim(const char *s)
 	while ((*s == ' ' || *s == '\t' || *s == '\n') && *s)
 		s++;
 	if (*s == '\0')
-		return ((char*)'\0');
+		return (ft_strnew(1));
 	len = ft_strlen(s) - 1;
 	while (s[len] == ' ' || s[len] == '\t' || s[len] == '\n')
 		len--;
