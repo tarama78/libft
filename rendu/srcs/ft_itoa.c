@@ -6,12 +6,11 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 09:47:47 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/07 10:02:13 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/08 14:01:20 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <libft.h>
 
 char		*ft_itoa(int n)
 {

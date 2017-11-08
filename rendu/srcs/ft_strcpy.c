@@ -6,11 +6,9 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 09:57:57 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/07 09:57:59 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/08 14:11:34 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <libft.h>
 
 char		*ft_strcpy(char *dest, const char *src)
 {

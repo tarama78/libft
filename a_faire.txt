@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/18 13:39:55 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/07 14:31:26 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/08 12:31:34 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,9 @@ obligatoire :
 		-> tolower
 
 	fonction supplementaire :
-		-x ft_memalloc -> random
+		-> ft_memalloc -> random
 		-> ft_memdel
-		-x ft_strnew -> random
+		-> ft_strnew -> random
 		-> ft_strdel
 		-> ft_strclr
 		-> ft_striter
@@ -68,9 +68,9 @@ obligatoire :
 		-> ft_putnbr_fd
 
 bonus :
-	ft_lstnew
-	ft_lstdelone
-	ft_lstdel
-	ft_lstadd
-	ft_lstiter
-	ft_lstmap
+	-> ft_lstnew
+	-> ft_lstdelone
+	-> ft_lstdel
+	-> ft_lstadd
+	-> ft_lstiter
+	-> ft_lstmap

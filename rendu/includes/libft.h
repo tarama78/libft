@@ -1,20 +1,19 @@
 /* ************************************************************************** */
-/*																			  */
-/*														  :::	   ::::::::   */
-/*	 libft.h											:+:		 :+:	:+:   */
-/*													  +:+ +:+		  +:+	  */
-/*	 By: tnicolas <marvin@42.fr>					+#+  +:+	   +#+		  */
-/*												  +#+#+#+#+#+	+#+			  */
-/*	 Created: 2017/11/07 09:45:23 by tnicolas		   #+#	  #+#			  */
-/*	 Updated: 2017/11/07 16:46:22 by tnicolas		  ###	########.fr		  */
-/*																			  */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/08 14:15:42 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/11/08 14:15:44 by tnicolas         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
-# include <stdio.h>/////////////////////////////////////////////////////////////
+# include <stddef.h>
 # include <struct.h>
 
 size_t		ft_strlen(const char *s);
@@ -71,5 +70,10 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
 
 t_list		*ft_lstnew(void const *content, size_t content_size);
+void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void		ft_lstadd(t_list **alst, t_list *new);
+void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 #endif

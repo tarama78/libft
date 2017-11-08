@@ -64,6 +64,8 @@ char		ft_f4(unsigned int n, char c)
 	return ((n % 2 == 0) ? c - 1 : c);
 }
 
+void		ft_list();
+
 int			main(int ac, char **av)
 {
 	int		i;
@@ -1232,7 +1234,51 @@ int			main(int ac, char **av)
 
 	ft_wait();
 
-	//list
+	ft_list();
+
+	ft_wait();
+
+	////////////////////////////////////////////////////////////////////////////
+	printf(YELLOW"all:\n"WHITE);
+	if (ok == 1)
+		FAILURE_MSG;
+	else
+		SUCCESS_MSG;
+	////////////////////////////////////////////////////////////////////////////
+	return (EXIT_SUCCESS);
+}
+
+void		ft_del(void *content, size_t size_content)
+{
+	(void)size_content;
+	free(content);
+}
+
+void		ft_lstsetcont(t_list *elem)
+{
+	ft_strcpy((char*)elem->content, "seksek");
+	elem->content_size = ft_strlen((char*)elem->content);
+}
+
+t_list		*ft_lstmapcpy(t_list *elem)
+{
+	t_list	*ret;
+	
+	(void)elem;
+	ret = ft_lstnew("new list", 9);
+	return (ret);
+}
+
+void		ft_list(int *ok2)
+{
+	int		i;
+	int		j;
+	int		ok;
+
+	ok = 0;
+	(void)i;
+	(void)j;
+
 	//ft_lstnew.c
 	printf(YELLOW"ft_lstnew :\n"WHITE);
 	t_list		*list1;
@@ -1266,16 +1312,68 @@ int			main(int ac, char **av)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
-	
-	
-	
-	
-	////////////////////////////////////////////////////////////////////////////
-	printf(YELLOW"all:\n"WHITE);
-	if (ok == 1)
-		FAILURE_MSG;
-	else
+
+	ft_wait();
+
+	//ft_lstdelone.c
+	printf(YELLOW"ft_lstdelone :\n"WHITE);
+	ft_lstdelone(&list1, &ft_del);
+	if (list1 == NULL)
 		SUCCESS_MSG;
-	////////////////////////////////////////////////////////////////////////////
-	return (EXIT_SUCCESS);
+	else
+		FAILURE_MSG;
+
+	//ft_lstdel.c
+	printf(YELLOW"ft_lstdel :\n"WHITE);
+	t_list		*list2;
+	t_list		*list3;
+	t_list		*list4;
+
+	list2 = ft_lstnew("seksek", 7);
+	list3 = ft_lstnew("coucou", 7);
+	list2->next = list3;
+	list4 = ft_lstnew("ok", 3);
+	list3->next = list4;
+	ft_lstdel(&list2, &ft_del);
+	NOT_TESTED_MSG;
+
+	//ft_lstadd.c
+	printf(YELLOW"ft_lstadd :\n"WHITE);
+	list1 = ft_lstnew("hello", 6);
+	list2 = ft_lstnew("seksek", 7);
+	list3 = ft_lstnew("coucou", 7);
+	list4 = ft_lstnew("ok", 3);
+
+	ft_lstadd(&list4, list3);
+	ft_lstadd(&list3, list2);
+	ft_lstadd(&list2, list1);
+	if (ft_memcmp(list1->next->content, list2->content, list2->content_size) &&
+					ft_memcmp(list1->next->next->next->content,
+						list4->content, list4->content_size))
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+
+	//ft_lstiter.c
+	printf(YELLOW"ft_lstiter :\n"WHITE);
+	ft_lstiter(list1, &ft_lstsetcont);
+	if (ft_memcmp(list1->content, list2->content, list3->content_size) == 0 &&
+		ft_memcmp(list3->content, list4->content, list1->content_size) == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+	
+	//ft_lstmap.c
+	printf(YELLOW"ft_lstmap :\n"WHITE);
+	t_list	*list5;
+	char	*s30 = ft_strdup("new list");
+	list5 = ft_lstmap(list1, &ft_lstmapcpy);
+	if (ft_memcmp(list5->content, (void*)s30, list5->content_size) == 0 &&
+			ft_memcmp(list5->next->next->next->content, list5->content,
+			list5->next->next->content_size) == 0)
+		SUCCESS_MSG;
+	else
+		FAILURE_MSG;
+	if (*ok2 == 0 && ok == 1)
+		*ok2 = 1;
 }

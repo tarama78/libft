@@ -6,12 +6,11 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 09:47:54 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/07 14:21:59 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/08 14:01:31 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <libft.h>
 
 void		*ft_memalloc(size_t size)
 {

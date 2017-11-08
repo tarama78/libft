@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   lstdelone.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:59:21 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/08 14:13:18 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/11/08 10:06:40 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/11/08 10:26:27 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <libft.h>
 
-char		*ft_strncat(char *dest, const char *src, size_t n)
+void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	int		i;
-	int		j;
-
-	i = -1;
-	while (dest[++i])
-		;
-	j = -1;
-	while (src[++j] && n-- > 0)
-		dest[i + j] = src[j];
-	dest[i + j] = '\0';
-	return (dest);
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/07 14:31:39 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/08 13:50:54 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,12 @@ FILES = ft_strlen.c \
 		  ft_memchr.c \
 		  ft_memcmp.c \
 		  ft_strlcat.c \
-		  list/ft_lstnew.c
+		  list/ft_lstnew.c \
+		  list/ft_lstdelone.c \
+		  list/ft_lstdel.c \
+		  list/ft_lstadd.c \
+		  list/ft_lstiter.c \
+		  list/ft_lstmap.c
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -97,10 +102,10 @@ re: fclean all
 
 open:
 	@vim +12 `find .. -iname "*.c" -o -iname "*.h" -o -iname "*.txt" \
-		-o -iname "Makefile" -o -iname ".gitignore" -o -iname "~/.vimrc" \
-	   -o -iname "~/.vim/vim_help_file"`
+		-o -iname "Makefile" -o -iname ".gitignore"` `find ~ -iname ".vimrc" \
+	   -o -iname ".vim/vim_help_file"`
 
 exec: all
 	@clear
-	$(CC) ../main.c -o ../libft_test $(INC) $(OBJ) $(CFLAGS)
+	$(CC) ../main.c -o ../libft_test $(INC) -L . $(CFLAGS) -lft
 	@../libft_test

@@ -6,12 +6,11 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 09:58:20 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/07 09:58:21 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/08 14:11:42 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <libft.h>
 
 void		ft_strdel(char **ap)
 {

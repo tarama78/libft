@@ -6,12 +6,11 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 09:48:00 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/07 09:48:01 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/08 14:01:51 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <libft.h>
 
 void		ft_memdel(void **ap)
 {
