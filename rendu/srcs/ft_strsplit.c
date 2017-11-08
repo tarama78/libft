@@ -6,11 +6,10 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 10:00:05 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/07 10:06:16 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/08 22:39:45 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <libft.h>
 
 static int	ft_count_word(const char *s, char c)
