@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 12:32:15 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/08 13:53:36 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/08 20:24:07 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,5 +37,5 @@ re: fclean all
 
 exec:
 	@clear
-	make all
+	make re
 	./$(NAME)
