@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 11:32:05 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/07 11:39:37 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/11/08 22:16:44 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/11/08 22:16:45 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,24 @@
 
 void		*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*tmp;
+	size_t	i;
 
-	if (!(tmp = malloc(sizeof(*tmp) * len)))
-		return (NULL);
-	ft_memcpy(tmp, src, len);
-	ft_memcpy(dst, tmp, len);
-	free(tmp);
+	if (((unsigned long)src) < ((unsigned long)dst))
+	{
+		while (len > 0)
+		{
+			*((char *)(dst + len - 1)) = *((const char *)(src + len - 1));
+			--len;
+		}
+	}
+	else if (((unsigned long)src) > ((unsigned long)dst))
+	{
+		i = 0;
+		while (i < len)
+		{
+			*((char *)(dst + i)) = *((const char *)(src + i));
+			++i;
+		}
+	}
 	return (dst);
 }
