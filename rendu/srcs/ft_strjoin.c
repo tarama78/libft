@@ -6,7 +6,7 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 09:58:54 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/08 14:12:36 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/08 21:24:22 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char		*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*ret;
 
-	if (!(ret = (char *)malloc(sizeof(*ret) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
+	if (!(ret = (char *)malloc(sizeof(*ret) * (ft_strlen(s1) + ft_strlen(s2) +
+						1))))
 		return (NULL);
 	ft_strncpy(ret, s1, ft_strlen(s1));
 	ft_strncat(ret, s2, ft_strlen(s2));

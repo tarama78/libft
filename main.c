@@ -1141,20 +1141,20 @@ int			main(int ac, char **av)
 	printf(YELLOW"ft_memcmp :\n"WHITE);
 	char	s25[4][100] =
 	{
-		"la str 1",
+		"aab",
 		"une autre str pour des tests",
 		"encore une str",
 		"et... la derniere"
 	};
 	char		s26[4][100] =
 	{
-		"la str 1",
+		"aac",
 		"une autre str pour des tests plus long",
 		"encore",
 		""
 	};
 	int		n9[] = {
-		ft_strlen(s25[0]) + 5,
+		2,
 		ft_strlen(s26[1]) - 2,
 		0,
 		5
