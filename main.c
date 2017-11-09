@@ -724,7 +724,7 @@ int			main(int ac, char **av)
 		FAILURE_MSG;
 
 	ft_wait();
-////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////
 	// ft_memalloc.c
 	printf(YELLOW"ft_memalloc :\n"WHITE);
 	char		*s8;
@@ -735,11 +735,11 @@ int			main(int ac, char **av)
 	while (s8[++i] < 42)
 		if (s8[i] != 0)
 			j = 1;
-/*	if (j == 0)
+	/*	if (j == 0)
 		SUCCESS_MSG;
-	else
+		else
 		FAILURE_MSG;
-*/
+		*/
 	NOT_TESTED_MSG;
 
 	ft_wait();
@@ -753,7 +753,7 @@ int			main(int ac, char **av)
 		FAILURE_MSG;
 
 	ft_wait();
-///////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////
 	// ft_strnew.c
 	printf(YELLOW"ft_strnew :\n"WHITE);
 	char		*s90;
@@ -763,11 +763,11 @@ int			main(int ac, char **av)
 	while (s90[++i] < 42)
 		if (s90[i] != 0)
 			j = 1;
-/*	if (j == 0)
+	/*	if (j == 0)
 		SUCCESS_MSG;
-	else
+		else
 		FAILURE_MSG;
-*/
+		*/
 	NOT_TESTED_MSG;
 
 	ft_wait();
@@ -985,7 +985,7 @@ int			main(int ac, char **av)
 	i = -1;
 	while (++i < 7)
 	{
-		printf("\ts -> \"%s\"\n", s14[i]);
+		printf("\ts '%c' -> \"%s\"\n", c4[i], s14[i]);
 		s15[i] = ft_strsplit(s14[i], c4[i]);
 		j = -1;
 		while (s15[i][++j] != 0)
@@ -1094,7 +1094,7 @@ int			main(int ac, char **av)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
-	
+
 	ft_wait();
 
 	// ft_memchr.c
@@ -1263,7 +1263,7 @@ void		ft_lstsetcont(t_list *elem)
 t_list		*ft_lstmapcpy(t_list *elem)
 {
 	t_list	*ret;
-	
+
 	(void)elem;
 	ret = ft_lstnew("new list", 9);
 	return (ret);
@@ -1348,8 +1348,8 @@ void		ft_list(int *ok2)
 	ft_lstadd(&list3, list2);
 	ft_lstadd(&list2, list1);
 	if (ft_memcmp(list1->next->content, list2->content, list2->content_size) &&
-					ft_memcmp(list1->next->next->next->content,
-						list4->content, list4->content_size))
+			ft_memcmp(list1->next->next->next->content,
+				list4->content, list4->content_size))
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
@@ -1358,11 +1358,11 @@ void		ft_list(int *ok2)
 	printf(YELLOW"ft_lstiter :\n"WHITE);
 	ft_lstiter(list1, &ft_lstsetcont);
 	if (ft_memcmp(list1->content, list2->content, list3->content_size) == 0 &&
-		ft_memcmp(list3->content, list4->content, list1->content_size) == 0)
+			ft_memcmp(list3->content, list4->content, list1->content_size) == 0)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
-	
+
 	//ft_lstmap.c
 	printf(YELLOW"ft_lstmap :\n"WHITE);
 	t_list	*list5;
@@ -1370,7 +1370,7 @@ void		ft_list(int *ok2)
 	list5 = ft_lstmap(list1, &ft_lstmapcpy);
 	if (ft_memcmp(list5->content, (void*)s30, list5->content_size) == 0 &&
 			ft_memcmp(list5->next->next->next->content, list5->content,
-			list5->next->next->content_size) == 0)
+				list5->next->next->content_size) == 0)
 		SUCCESS_MSG;
 	else
 		FAILURE_MSG;
