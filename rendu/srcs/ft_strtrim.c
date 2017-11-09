@@ -6,10 +6,11 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 10:00:23 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/08 22:41:13 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/09 15:24:05 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <libft.h>
 
 char		*ft_strtrim(const char *s)
@@ -18,6 +19,8 @@ char		*ft_strtrim(const char *s)
 	int		i;
 	int		len;
 
+	if (s == NULL)
+		return (NULL);
 	while ((*s == ' ' || *s == '\t' || *s == '\n') && *s)
 		s++;
 	if (*s == '\0')
@@ -26,7 +29,7 @@ char		*ft_strtrim(const char *s)
 	while (s[len] == ' ' || s[len] == '\t' || s[len] == '\n')
 		len--;
 	len++;
-	if (!(ret = ft_strnew(sizeof(*ret) * (len + 1))))
+	if (!(ret = (char*)malloc(sizeof(*ret) * (len + 1))))
 		return (NULL);
 	i = -1;
 	while (++i < len)

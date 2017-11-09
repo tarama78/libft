@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:59:39 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/09 15:04:53 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/11/09 15:44:38 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/11/09 15:44:40 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <stdlib.h>
 
-int			ft_strnequ(const char *s1, const char *s2, size_t n)
+char		*ft_strjoin(const char *s1, const char *s2)
 {
+	char	*ret;
+
 	if (s1 == NULL || s2 == NULL)
-		return (0);
-	while (*s1 == *s2 && *s1 && --n > 0)
-	{
-		s1++;
-		s2++;
-	}
-	return ((*s1 == *s2 || n == 0) ? (1) : (0));
+		return (NULL);
+	if (!(ret = (char *)malloc(sizeof(*ret) * (ft_strlen(s1) + ft_strlen(s2) +
+						1))))
+		return (NULL);
+	ft_strncpy(ret, s1, ft_strlen(s1));
+	ft_strncat(ret, s2, ft_strlen(s2));
+	return (ret);
 }

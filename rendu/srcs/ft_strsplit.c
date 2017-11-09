@@ -6,7 +6,7 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 10:00:05 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/08 22:39:45 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/09 15:09:02 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ char		**ft_strsplit(const char *s, char c)
 	int		nb_word;
 	int		i;
 
+	if (s == NULL)
+		return (NULL);
 	nb_word = ft_count_word(s, c);
 	if (!(ret = ft_memalloc(sizeof(*ret) * (nb_word + 1))))
 		return (NULL);

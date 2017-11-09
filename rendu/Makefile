@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/08 13:50:54 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/09 15:16:15 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,3 +109,9 @@ exec: all
 	@clear
 	$(CC) ../main.c -o ../libft_test $(INC) -L . $(CFLAGS) -lft
 	@../libft_test
+
+norm:
+	@norminette $(SRCS) $(INC_DIR)/*
+
+normok:
+	@make norm | grep -v "Norme:"

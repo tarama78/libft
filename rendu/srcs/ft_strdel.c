@@ -6,7 +6,7 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 09:58:20 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/08 17:02:12 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/09 14:53:04 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void		ft_strdel(char **ap)
 {
+	if (ap == NULL)
+		return ;
 	if (*ap != NULL)
 		free(*ap);
 	*ap = NULL;

@@ -6,12 +6,16 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 09:57:39 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/08 14:11:20 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/09 14:53:54 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
+
 void		ft_strclr(char *s)
 {
+	if (s == NULL)
+		return ;
 	while (*s)
 		*(s++) = '\0';
 }
