@@ -6,7 +6,7 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 09:59:44 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/07 16:17:53 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/09 10:18:28 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ char		*ft_strnew(size_t size)
 {
 	char	*ret;
 
-	if (!(ret = (char*)malloc(size)))
+	if (!(ret = (char*)malloc(size + 1)))
 		return (NULL);
-	while (--size > 0)
-		ret[size] = 0;
+	while (size > 0)
+		ret[size--] = 0;
 	ret[0] = 0;
 	return (ret);
 }
