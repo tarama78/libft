@@ -39,3 +39,5 @@ exec:
 	@clear
 	make re
 	./$(NAME)
+
+.PHONY: all clean fclean re exec
