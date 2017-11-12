@@ -33,6 +33,7 @@
 #define NOT_TESTED_MSG printf(MAGENTA"<<< FUNCTION NOT TESTED >>>\n\n"WHITE)
 #define NEWLINE ft_putchar('\n')
 
+
 void		ft_wait()
 {
 	static int		i = 0;
