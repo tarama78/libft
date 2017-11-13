@@ -71,7 +71,9 @@ FILES = ft_strlen.c \
 		  list/ft_lstdel.c \
 		  list/ft_lstadd.c \
 		  list/ft_lstiter.c \
-		  list/ft_lstmap.c
+		  list/ft_lstmap.c \
+		  ft_realloc.c
+
 HFILES = includes/libft.h
 
 CC = gcc
