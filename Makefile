@@ -71,7 +71,10 @@ FILES = ft_strlen.c \
 		  list/ft_lstdel.c \
 		  list/ft_lstadd.c \
 		  list/ft_lstiter.c \
-		  list/ft_lstmap.c
+		  list/ft_lstmap.c \
+		  ft_realloc.c
+
+HFILES = includes/libft.h
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -114,6 +117,10 @@ norm:
 	@norminette $(SRCS) $(INC_DIR)/*
 
 normok:
-	@make norm | grep -v "Norme:"
+ifeq ($(shell norminette $(SRCS) $(HFILES) | grep -v "Norme:"),)
+	@echo ok
+else
+	@make norm
+endif
 
 .PHONY: all clean clean_swp fclean re open exec norm normok
