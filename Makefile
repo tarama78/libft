@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/13 22:55:28 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/13 22:56:28 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-obj/%.o: srcs/%.c
+obj/%.o: srcs/%.c $(HFILES)
 	$(CC) -c $(INC) $< -o $@ $(CFLAGS)
 
 clean:
@@ -116,11 +116,4 @@ exec: all
 norm:
 	@norminette $(SRCS) $(INC_DIR)/*
 
-normok:
-ifeq ($(shell norminette $(SRCS) $(HFILES) | grep -v "Norme:"),)
-	@echo ok
-else
-	@make norm
-endif
-
-.PHONY: all clean clean_swp fclean re open exec norm normok
+.PHONY: all clean clean_swp fclean re open exec norm
