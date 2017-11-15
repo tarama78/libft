@@ -97,15 +97,21 @@ MAGENTA = "\x1B[35m"
 CYAN = "\x1B[36m"
 WHITE = "\x1B[37m"
 
-all: $(NAME)
+START = @printf $(GREEN)"LIBFT\n--------------------\n"$(NORMAL)
+END = @printf $(GREEN)"--------------------\n"$(NORMAL)
+
+all:
+	$(START)
+	@make $(NAME)
+	$(END)
 
 $(NAME): $(OBJ_DIR) $(OBJ)
-	@printf $(CYAN)"-> create lib\n"$(WHITE)
+	@printf $(CYAN)"-> create lib\n"$(NORMAL)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
 $(OBJ_DIR)%.o: $(SRCS_DIR)%.c $(HFILES)
-	@printf $(YELLOW)"-> $<\n"$(WHITE)
+	@printf $(YELLOW)"-> $<\n"$(NORMAL)
 	@$(CC) -c $(INC) $< -o $@ $(CFLAGS)
 
 $(OBJ_DIR):
@@ -113,12 +119,16 @@ $(OBJ_DIR):
 	@mkdir -p $(dir $(OBJ))
 
 clean:
-	@printf $(MAGENTA)"-x remove .o files\n"$(WHITE)
+	$(START)
+	@printf $(MAGENTA)"-x remove .o files\n"$(NORMAL)
 	@rm -f $(OBJ)
+	$(END)
 
 fclean: clean
-	@printf $(MAGENTA)"-x remove $(NAME)\n"$(WHITE)
+	$(START)
+	@printf $(MAGENTA)"-x remove $(NAME)\n"$(NORMAL)
 	@rm -f $(NAME)
+	$(END)
 
 re: fclean all
 
@@ -133,7 +143,8 @@ exec: all
 	@./libft_test
 
 norm:
-	@printf $(BLUE)"NORME LIBFT\n"$(WHITE)
+	@printf $(BLUE)"NORME LIBFT\n--------------------\n"$(NORMAL)
 	@norminette $(SRCS) $(HFILES)
+	@printf $(BLUE)"--------------------\n"$(NORMAL)
 
 .PHONY: all clean clean_swp fclean re open exec norm
