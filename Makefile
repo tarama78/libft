@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/15 10:17:13 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/15 10:34:21 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,7 +104,7 @@ $(NAME): $(OBJ_DIR) $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
-obj/%.o: srcs/%.c $(HFILES)
+$(OBJ_DIR)%.o: $(SRCS_DIR)%.c $(HFILES)
 	@printf $(YELLOW)"-> $<\n"$(WHITE)
 	@$(CC) -c $(INC) $< -o $@ $(CFLAGS)
 
