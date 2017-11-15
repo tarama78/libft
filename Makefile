@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/15 10:34:21 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/15 10:42:18 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -136,6 +136,7 @@ exec: all
 	@./libft_test
 
 norm:
+	@printf $(BLUE)"NORME LIBFT\n"$(WHITE)
 	@norminette $(SRCS) $(HFILES)
 
 .PHONY: all clean clean_swp fclean re open exec norm
