@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/15 10:42:18 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/15 10:45:01 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -116,10 +116,7 @@ clean:
 	@printf $(MAGENTA)"-x remove .o files\n"$(WHITE)
 	@rm -f $(OBJ)
 
-clean_swp:
-	@find . -name "*~" -o -name "#*#" -o -name ".*.swp" -delete -print
-
-fclean: clean clean_swp
+fclean: clean
 	@printf $(MAGENTA)"-x remove $(NAME)\n"$(WHITE)
 	@rm -f $(NAME)
 
