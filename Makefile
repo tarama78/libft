@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/15 10:02:20 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/15 10:11:56 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,27 +88,40 @@ INC := $(addprefix -I , $(INC_DIR))
 SRCS := $(addprefix $(SRCS_DIR), $(FILES))
 OBJ := $(addprefix $(OBJ_DIR), $(FILES:.c=.o))
 
+NORMAL = "\x1B[0m"
+RED = "\x1B[31m"
+GREEN = "\x1B[32m"
+YELLOW = "\x1B[33m"
+BLUE = "\x1B[34m"
+MAGENTA = "\x1B[35m"
+CYAN = "\x1B[36m"
+WHITE = "\x1B[37m"
+
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(NAME): $(OBJ_DIR) $(OBJ)
+	@printf $(CYAN)"-> create lib\n"$(WHITE)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
-obj/%.o: srcs/%.c $(HFILES) $(OBJ_DIR)
-	$(CC) -c $(INC) $< -o $@ $(CFLAGS)
+obj/%.o: srcs/%.c $(HFILES)
+	@printf $(YELLOW)"-> $<\n"$(WHITE)
+	@$(CC) -c $(INC) $< -o $@ $(CFLAGS)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 	@mkdir -p $(dir $(OBJ))
 
 clean:
-	rm -f $(OBJ)
+	@printf $(MAGENTA)"-x remove .o files\n"$(WHITE)
+	@rm -f $(OBJ)
 
 clean_swp:
-	find . -name "*~" -o -name "#*#" -o -name ".*.swp" -delete -print
+	@find . -name "*~" -o -name "#*#" -o -name ".*.swp" -delete -print
 
 fclean: clean clean_swp
-	rm -f $(NAME)
+	@printf $(MAGENTA)"-x remove $(NAME)\n"$(WHITE)
+	@rm -f $(NAME)
 
 re: fclean all
 
@@ -119,7 +132,7 @@ open:
 
 exec: all
 	@clear
-	$(CC) main.c -o libft_test $(INC) -L . $(CFLAGS) -lft
+	@$(CC) main.c -o libft_test $(INC) -L . $(CFLAGS) -lft
 	@./libft_test
 
 norm:
