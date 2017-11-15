@@ -106,7 +106,7 @@ all:
 	$(END)
 
 $(NAME): $(OBJ_DIR) $(OBJ)
-	@printf $(CYAN)"-> create lib\n"$(NORMAL)
+	@printf $(CYAN)"-> create lib : $(NAME)\n"$(NORMAL)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
@@ -120,13 +120,13 @@ $(OBJ_DIR):
 
 clean:
 	$(START)
-	@printf $(MAGENTA)"-x remove .o files\n"$(NORMAL)
+	@printf $(RED)"-x remove .o files\n"$(NORMAL)
 	@rm -f $(OBJ)
 	$(END)
 
 fclean: clean
 	$(START)
-	@printf $(MAGENTA)"-x remove $(NAME)\n"$(NORMAL)
+	@printf $(RED)"-x remove $(NAME)\n"$(NORMAL)
 	@rm -f $(NAME)
 	$(END)
 
