@@ -6,14 +6,14 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 19:15:39 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/13 22:57:00 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/11/15 09:51:42 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <libft.h>
 
-void	*ft_realloc(void *ptr, size_t original_size, size_t new_size)
+void		*ft_realloc(void *ptr, size_t original_size, size_t new_size)
 {
 	void	*new;
 

@@ -6,13 +6,11 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/13 22:56:28 by tnicolas         ###   ########.fr        #
+#    Updated: 2017/11/15 10:02:20 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-INC_DIR = includes
 
 FILES = ft_strlen.c \
 		  ft_putchar.c \
@@ -72,16 +70,23 @@ FILES = ft_strlen.c \
 		  list/ft_lstadd.c \
 		  list/ft_lstiter.c \
 		  list/ft_lstmap.c \
-		  ft_realloc.c
+		  bonus/ft_realloc.c \
+		  bonus/ft_read_fd.c \
+		  bonus/ft_read_file.c
 
-HFILES = includes/libft.h
+HFILES = includes/libft.h \
+		 includes/list.h
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
+INC_DIR = includes/
+SRCS_DIR = srcs/
+OBJ_DIR = obj/
+
 INC := $(addprefix -I , $(INC_DIR))
-SRCS := $(addprefix srcs/, $(FILES))
-OBJ := $(addprefix obj/, $(FILES:.c=.o))
+SRCS := $(addprefix $(SRCS_DIR), $(FILES))
+OBJ := $(addprefix $(OBJ_DIR), $(FILES:.c=.o))
 
 all: $(NAME)
 
@@ -89,8 +94,12 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-obj/%.o: srcs/%.c $(HFILES)
+obj/%.o: srcs/%.c $(HFILES) $(OBJ_DIR)
 	$(CC) -c $(INC) $< -o $@ $(CFLAGS)
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(dir $(OBJ))
 
 clean:
 	rm -f $(OBJ)
@@ -114,6 +123,6 @@ exec: all
 	@./libft_test
 
 norm:
-	@norminette $(SRCS) $(INC_DIR)/*
+	@norminette $(SRCS) $(HFILES)
 
 .PHONY: all clean clean_swp fclean re open exec norm
