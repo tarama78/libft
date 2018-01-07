@@ -51,10 +51,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# vim
 *.vim
 *.swp
-
-# other
-libft_test
 .DS_Store
