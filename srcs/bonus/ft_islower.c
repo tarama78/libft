@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pmilan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:52:32 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/12/05 17:31:32 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/12/20 17:26:22 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/12/20 17:28:40 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-
-void		ft_putendl(const char *s)
+int			ft_islower(int c)
 {
-	if (s == NULL)
-		return ;
-	ft_putstr(s);
-	ft_putchar('\n');
+	return (c >= 'a' && c <= 'z') ? 1 : 0;
 }

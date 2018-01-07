@@ -6,7 +6,7 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:15:42 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/15 09:51:09 by tnicolas         ###   ########.fr       */
+/*   Updated: 2018/01/06 16:17:23 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,28 @@
 
 # include <stddef.h>
 # include <list.h>
+# include <wchar.h>
 
 # define BUFF_SIZE 2048
+
+# define PRINTF_ERROR -1
+
+# define EOC	"\x1B[0m"
+# define RED  "\x1B[31m"
+# define GREEN  "\x1B[32m"
+# define YELLOW	"\x1B[33m"
+# define BLUE  "\x1B[34m"
+# define MAGENTA  "\x1B[35m"
+# define CYAN  "\x1B[36m"
+# define WHITE  "\x1B[37m"
+# define F_RED  "\x1B[41m"
+# define F_GREEN  "\x1B[42m"
+# define F_YELLOW	"\x1B[43m"
+# define F_BLUE  "\x1B[44m"
+# define F_MAGENTA  "\x1B[45m"
+# define F_CYAN  "\x1B[46m"
+# define F_WHITE  "\x1B[47m"
+# define CLEAR "\033[H\033[2J"
 
 size_t		ft_strlen(const char *s);
 void		ft_putchar(char c);
@@ -40,6 +60,8 @@ int			ft_isdigit(int c);
 int			ft_isalnum(int c);
 int			ft_isascii(int c);
 int			ft_isprint(int c);
+int			ft_islower(int c);
+int			ft_isupper(int c);
 int			ft_atoi(const char *nptr);
 char		*ft_itoa(int n);
 char		*ft_strstr(const char *haystack, const char *needle);
@@ -81,5 +103,25 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void		*ft_realloc(void *ptr, size_t original_size, size_t new_size);
 int			ft_read_fd(int fd, char **file_content);
 int			ft_read_file(char *filename, char **file_content);
+char		*ft_int_to_base(long long n, char *base);
+char		*ft_int_to_nbase(long n, char *base, int size);
+long long	ft_base_to_int(char *n, char *base);
+char		*ft_convert_base(char *n, char *base_in, char *base_out);
+char		*ft_ftoa(double f, int sign);
+char		*ft_ltoa(long n);
+char		*ft_lltoa(long long n);
+unsigned	ft_abs(int nb);
+int			ft_fruit(size_t n, ...);
+char		*ft_strndup(const char *s1, int n);
+double		ft_power(double nb, int power);
+long long	ft_2arg(int arg1, int arg2);
+int			ft_get2arg(long long arg, int n);
+
+int			ft_printf(const char *format, ...);
+int			ft_vprintf(const char *format, va_list ap);
+int			ft_dprintf(int fd, const char *format, ...);
+int			ft_vdprintf(int fd, const char *format, va_list ap);
+int			ft_asprintf(char **str, const char *format, ...);
+int			ft_vasprintf(char **ret, const char *format, va_list ap);
 
 #endif

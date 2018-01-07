@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pmilan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:52:32 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/12/05 17:31:32 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/12/18 16:19:38 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/12/18 16:19:52 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-
-void		ft_putendl(const char *s)
+double		ft_power(double nb, int power)
 {
-	if (s == NULL)
-		return ;
-	ft_putstr(s);
-	ft_putchar('\n');
+	double result;
+
+	result = nb;
+	if (power <= 0)
+	{
+		while (power <= 0)
+		{
+			result /= nb;
+			++power;
+		}
+		return (result);
+	}
+	while (power > 1)
+	{
+		result *= nb;
+		--power;
+	}
+	return (result);
 }

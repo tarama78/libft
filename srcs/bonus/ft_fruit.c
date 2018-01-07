@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_fruit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:52:32 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/12/05 17:31:32 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/12/20 11:45:25 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/12/20 19:45:47 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdarg.h>
+#include <stdlib.h>
 
-void		ft_putendl(const char *s)
+int		ft_fruit(size_t n, ...)
 {
-	if (s == NULL)
-		return ;
-	ft_putstr(s);
-	ft_putchar('\n');
+	void	*del;
+	va_list	ap;
+
+	va_start(ap, n);
+	while (n-- > 0)
+		free((del = va_arg(ap, void *)));
+	va_end(ap);
+	return (1);
 }

@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   convert_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:47:47 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/12/14 11:36:52 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/11/29 18:14:49 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/12/04 15:47:01 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
 
-char		*ft_itoa(int n)
+char		*ft_convert_base(char *n, char *base_in, char *base_out)
 {
-	int				size_str;
-	char			*str;
-	unsigned int	n2;
+	long long	int_nb;
+	char		*ret;
 
-	n2 = (n < 0) ? (unsigned int)-n : (unsigned int)n;
-	size_str = (n < 0) ? 2 : 1;
-	while ((n2 /= 10))
-		size_str++;
-	if (!(str = (char*)malloc(sizeof(*str) * (size_str + 1))))
+	int_nb = ft_base_to_int(n, base_in);
+	if (!(ret = ft_int_to_base(int_nb, base_out)))
 		return (NULL);
-	str[size_str] = '\0';
-	n2 = (n < 0) ? (unsigned int)-n : (unsigned int)n;
-	while (--size_str >= 0)
-	{
-		str[size_str] = n2 % 10 + '0';
-		n2 /= 10;
-	}
-	str[0] = (n < 0) ? '-' : str[0];
-	return (str);
+	return (ret);
 }

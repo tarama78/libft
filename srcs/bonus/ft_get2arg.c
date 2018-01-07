@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_get2arg.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:52:32 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/12/05 17:31:32 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/12/19 16:32:32 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/12/21 11:11:26 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-
-void		ft_putendl(const char *s)
+int			ft_get2arg(long long arg, int n)
 {
-	if (s == NULL)
-		return ;
-	ft_putstr(s);
-	ft_putchar('\n');
+	int		bit;
+
+	bit = sizeof(long long) * 4;
+	if (n == 0)
+		return ((int)((arg << bit) >> bit));
+	return ((int)(arg >> bit));
 }

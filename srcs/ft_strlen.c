@@ -6,7 +6,7 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 09:59:01 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/11/08 14:12:57 by tnicolas         ###   ########.fr       */
+/*   Updated: 2017/12/05 17:30:52 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t		ft_strlen(const char *s)
 {
 	int		i;
 
+	if (s == NULL)
+		return (0);
 	i = -1;
 	while (s[++i])
 		;

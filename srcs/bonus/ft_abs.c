@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pmilan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:52:32 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/12/05 17:31:32 by tnicolas         ###   ########.fr       */
+/*   Created: 2017/12/12 11:31:41 by tnicolas          #+#    #+#             */
+/*   Updated: 2017/12/12 11:32:36 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-
-void		ft_putendl(const char *s)
+unsigned	ft_abs(int nb)
 {
-	if (s == NULL)
-		return ;
-	ft_putstr(s);
-	ft_putchar('\n');
+	return ((nb < 0) ? -(unsigned int)nb : (unsigned int)nb);
 }
