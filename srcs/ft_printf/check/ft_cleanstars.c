@@ -127,7 +127,7 @@ int			ft_cleanstars(char **str, va_list ap)
 				return (ERROR);
 		}
 	}
-	if (ft_fruit(1, *str) && !(*str = ft_strdup(cpy)))
+	if (!(*str = ft_strdup(cpy)) && ft_fruit(1, *str))
 		return (ERROR);
 	free(cpy);
 	return (SUCCESS);
