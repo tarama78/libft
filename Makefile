@@ -189,6 +189,12 @@ clean:
 	@rm -f $(OBJ_DIR)
 	$(END)
 
+cleanlib:
+	$(START)
+	@printf $(RED)"-x remove $(NAME)\n"$(NORMAL)
+	@rm -f $(NAME)
+	$(END)
+
 fclean: clean
 	$(START)
 	@printf $(RED)"-x remove $(NAME)\n"$(NORMAL)
