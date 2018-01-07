@@ -192,7 +192,7 @@ clean:
 fclean: clean
 	$(START)
 	@printf $(RED)"-x remove $(NAME)\n"$(NORMAL)
-	@rm -f $(NAME)
+	@rm -rf $(NAME)
 	$(END)
 
 re: fclean all
