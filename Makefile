@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2017/11/15 10:45:01 by tnicolas         ###   ########.fr        #
+#    Updated: 2018/01/07 16:12:21 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -147,7 +147,7 @@ CFLAGS = -Wall -Wextra -Werror
 INC_DIR = includes/ \
 		  includes/ft_printf
 SRCS_DIR = srcs/
-OBJ_DIR = obj/
+OBJ_DIR = objs/
 
 INC := $(addprefix -I , $(INC_DIR))
 SRCS := $(addprefix $(SRCS_DIR), $(FILES))
@@ -186,7 +186,7 @@ $(OBJ_DIR):
 clean:
 	$(START)
 	@printf $(RED)"-x remove .o files\n"$(NORMAL)
-	@rm -f $(OBJ)
+	@rm -f $(OBJ_DIR)
 	$(END)
 
 fclean: clean
