@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2018/01/15 11:03:28 by tnicolas         ###   ########.fr        #
+#    Updated: 2018/01/15 11:05:52 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -205,7 +205,7 @@ cleanlib:
 fclean: clean
 	$(START)
 	@printf $(RED)"-x remove $(NAME)\n"$(NORMAL)
-	@rm -f $(NAME)
+	@rm -rf $(NAME)
 	$(END)
 
 re: fclean
