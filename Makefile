@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2018/01/15 11:05:52 by tnicolas         ###   ########.fr        #
+#    Updated: 2018/01/15 14:53:10 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,7 @@ FILES = ft_strlen.c \
 		list/ft_lstmap.c \
 		list/ft_lstget.c \
 		bonus/ft_intlen.c \
+		bonus/ft_atol.c \
 		bonus/ft_max.c \
 		bonus/ft_min.c \
 		bonus/ft_realloc.c \
@@ -182,12 +183,11 @@ $(NAME): $(OBJ_DIR) $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
-$(OBJ_DIR)%.o: $(SRCS_DIR)%.c $(HFILES) $(OBJ_DIR)
+$(OBJ_DIR)%.o: $(SRCS_DIR)%.c $(HFILES)
 	@printf $(YELLOW)"-> $<\n"$(NORMAL)
 	@$(CC) -c $(INC) $< -o $@ $(CFLAGS)
 
 $(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
 	@mkdir -p $(dir $(OBJ))
 
 clean:
