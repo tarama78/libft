@@ -6,7 +6,7 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 10:55:38 by tnicolas          #+#    #+#             */
-/*   Updated: 2018/01/14 13:19:05 by tnicolas         ###   ########.fr       */
+/*   Updated: 2018/01/24 17:57:32 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,12 @@ void		ft_init_color(t_color *color)
 	ft_init_struct_font(color);
 	ft_strcpy(color[15].name, "clear");
 	ft_strcpy(color[15].color, CLEAR);
+	ft_strcpy(color[16].name, "bold");
+	ft_strcpy(color[16].color, BOLD);
+	ft_strcpy(color[17].name, "light");
+	ft_strcpy(color[17].color, LIGHT);
+	ft_strcpy(color[18].name, "italic");
+	ft_strcpy(color[18].color, ITALIC);
+	ft_strcpy(color[19].name, "uline");
+	ft_strcpy(color[19].color, ULINE);
 }

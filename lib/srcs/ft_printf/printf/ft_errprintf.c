@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_errprintf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 10:26:26 by tnicolas          #+#    #+#             */
-/*   Updated: 2018/01/08 17:41:27 by tnicolas         ###   ########.fr       */
+/*   Created: 2018/01/24 17:43:10 by tnicolas          #+#    #+#             */
+/*   Updated: 2018/01/24 17:43:45 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 **   ____________________________________________________________
-**   | ft_memset.c                                              |
-**   |     ft_memset(6 lines)                                   |
+**   | ft_errprintf.c                                           |
+**   |     ft_printf(17 lines)                                  |
 **   ------------------------------------------------------------
 **           __n__n__  /
 **    .------`-\00/-'/
@@ -23,14 +23,25 @@
 **     |||   |||
 */
 
-#include <libft.h>
+#include <ft_printf.h>
 
-void		*ft_memset(void *b, int c, size_t len)
+int			ft_errprintf(const char *format, ...)
 {
-	int		i;
+	va_list	ap;
+	char	*str;
+	int		ret;
 
-	i = -1;
-	while (++i < (int)len)
-		((char*)b)[i] = (unsigned char)c;
-	return (b);
+	str = NULL;
+	va_start(ap, format);
+	if ((ret = ft_vasprintf(&str, format, ap)) == ERROR)
+	{
+		va_end(ap);
+		return (ERROR);
+	}
+	va_end(ap);
+	if (str != NULL)
+		if (write(STDERR_FILENO, str, ret) == -1 && ft_fruit(1, str))
+			return (ERROR);
+	free(str);
+	return (ret);
 }

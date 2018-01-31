@@ -6,7 +6,7 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:15:42 by tnicolas          #+#    #+#             */
-/*   Updated: 2018/01/17 11:11:20 by tnicolas         ###   ########.fr       */
+/*   Updated: 2018/01/30 14:55:43 by ynacache         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@
 # include <stddef.h>
 # include <struct.h>
 # include <wchar.h>
+# include <unistd.h>
+# include <stdint.h>
+# include <stdlib.h>
 
-# define BUFF_SIZE 2048
+# define BUFF_SIZE 32552
 
 # define PRINTF_ERROR -1
 
@@ -42,6 +45,13 @@
 # define F_CYAN  "\x1B[46m"
 # define F_WHITE  "\x1B[47m"
 # define CLEAR "\033[H\033[2J"
+# define BOLD "\e[1m"
+# define LIGHT "\e[2m"
+# define ITALIC "\e[3m"
+# define ULINE "\e[4m"
+
+# define MASK01 0x0101010101010101
+# define MASK80 0x8080808080808080
 
 size_t		ft_strlen(const char *s);
 void		ft_putchar(char c);
@@ -132,6 +142,8 @@ int			get_next_line(const int fd, char **line);
 
 int			ft_printf(const char *format, ...);
 int			ft_vprintf(const char *format, va_list ap);
+int			ft_errprintf(const char *format, ...);
+int			ft_verrprintf(const char *format, va_list ap);
 int			ft_dprintf(int fd, const char *format, ...);
 int			ft_vdprintf(int fd, const char *format, va_list ap);
 int			ft_asprintf(char **str, const char *format, ...);

@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_verrprintf.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 13:46:11 by tnicolas          #+#    #+#             */
-/*   Updated: 2018/01/08 17:41:27 by tnicolas         ###   ########.fr       */
+/*   Created: 2018/01/24 17:44:42 by tnicolas          #+#    #+#             */
+/*   Updated: 2018/01/24 17:45:15 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 **   ____________________________________________________________
-**   | ft_memcmp.c                                              |
-**   |     ft_memcmp(8 lines)                                   |
+**   | ft_verrprintf.c                                          |
+**   |     ft_vprintf(10 lines)                                 |
 **   ------------------------------------------------------------
 **           __n__n__  /
 **    .------`-\00/-'/
@@ -23,16 +23,18 @@
 **     |||   |||
 */
 
-#include <libft.h>
+#include <ft_printf.h>
 
-int			ft_memcmp(const void *s1, const void *s2, size_t n)
+int			ft_verrprintf(const char *format, va_list ap)
 {
-	if (n == 0)
-		return (0);
-	while (*(unsigned char*)s1 == *(unsigned char*)s2 && --n > 0)
-	{
-		s1++;
-		s2++;
-	}
-	return (*(unsigned char*)s1 - *(unsigned char*)s2);
+	char	*str;
+	int		ret;
+
+	str = NULL;
+	if ((ret = ft_vasprintf(&str, format, ap)) == ERROR)
+		return (ERROR);
+	if (str != NULL)
+		write(STDERR_FILENO, str, ret);
+	free(str);
+	return (ret);
 }

@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2018/01/15 14:53:10 by tnicolas         ###   ########.fr        #
+#    Updated: 2018/01/30 15:00:45 by ynacache         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,6 +100,8 @@ FILES = ft_strlen.c \
 
 FILES_FT_PRINTF = printf/ft_printf.c \
 		printf/ft_vprintf.c \
+		printf/ft_errprintf.c \
+		printf/ft_verrprintf.c \
 		printf/ft_dprintf.c \
 		printf/ft_vdprintf.c \
 		printf/ft_asprintf.c \
@@ -146,8 +148,8 @@ FILES_FT_PRINTF = printf/ft_printf.c \
 
 HFILES = includes/libft.h \
 		 includes/struct.h \
-		 includes/ft_printf/ft_printf.h \
-		 includes/ft_printf/ft_printf_struct.h
+		 includes/ft_printf.h \
+		 includes/ft_printf_struct.h
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -169,9 +171,13 @@ BLUE = "\x1B[34m"
 MAGENTA = "\x1B[35m"
 CYAN = "\x1B[36m"
 WHITE = "\x1B[37m"
+BOLD = "\e[1m"
+LIGHT = "\e[2m"
+ITALIC = "\e[3m"
+ULINE = "\e[4m"
 
-START = @printf $(GREEN)"LIBFT\n--------------------\n"$(NORMAL)
-END = @printf $(GREEN)"--------------------\n"$(NORMAL)
+START = @printf $(GREEN)$(BOLD)"LIBFT\n--------------------\n"$(NORMAL)
+END = @printf $(GREEN)$(BOLD)"--------------------\n"$(NORMAL)
 
 all:
 	$(START)
@@ -215,8 +221,8 @@ open:
 	@vim +Line $(SRCS) $(HFILES) Makefile
 
 norm:
-	@printf $(BLUE)"NORME LIBFT\n--------------------\n"$(NORMAL)
+	@printf $(BLUE)$(BOLD)"NORME LIBFT\n--------------------\n"$(NORMAL)
 	@norminette $(SRCS) $(HFILES)
-	@printf $(BLUE)"--------------------\n"$(NORMAL)
+	@printf $(BLUE)$(BOLD)"--------------------\n"$(NORMAL)
 
 .PHONY: all clean fclean re open norm

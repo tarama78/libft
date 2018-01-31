@@ -6,14 +6,14 @@
 /*   By: pmilan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 14:14:48 by tnicolas          #+#    #+#             */
-/*   Updated: 2017/12/21 11:20:44 by tnicolas         ###   ########.fr       */
+/*   Updated: 2018/01/24 17:57:52 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_STRUCT_H
 # define FT_PRINTF_STRUCT_H
 
-# define NB_COLOR 16
+# define NB_COLOR 20
 # define SIZE_COLOR_NAME 10
 
 typedef unsigned long long	t_ull;
