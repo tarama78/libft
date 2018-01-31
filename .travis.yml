@@ -1,0 +1,4 @@
+script: make re -j3 -C lib
+language: c
+os: osx
+compiler: clang
