@@ -1,4 +1,4 @@
-script: make -j3 -C lib
+script: make -j3 -C lib CFLAGS=-Wall -Wextra -Werror
 language: c
 os: osx
 compiler: clang gcc
