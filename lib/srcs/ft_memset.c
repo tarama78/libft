@@ -40,7 +40,7 @@ void		*ft_memset(void *b, int c, size_t len)
 		((uint64_t)(c & 0xff) << 48) + ((uint64_t)(c & 0xff) << 56);
 	long_p = (uint64_t*)((uintptr_t)b & ~(sizeof(uint64_t) - 1)) + 1;
 	i = -1;
-	while (&(b[++i]) < (void*)long_p && (size_t)i < len)
+	while ((void*)&(((char*)b)[++i]) < (void*)long_p && (size_t)i < len)
 		((char*)b)[i] = c;
 	long_p--;
 	while (++long_p && (size_t)(i += 8) < len)
