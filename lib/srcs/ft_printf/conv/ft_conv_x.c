@@ -6,15 +6,14 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 14:27:56 by tnicolas          #+#    #+#             */
-/*   Updated: 2018/01/14 13:19:07 by tnicolas         ###   ########.fr       */
+/*   Updated: 2018/02/22 09:59:23 by pi               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 **   ____________________________________________________________
 **   | ft_conv_x.c                                              |
-**   |     ft_get_size_x(24 lines)                              |
-**   |     ft_conv_x_type(19 lines)                             |
+**   |     ft_conv_x_type(17 lines)                             |
 **   |     ft_get_size_new(7 lines)                             |
 **   |     ft_place_nb_x(25 lines)                              |
 **   |     ft_conv_x(23 lines)                                  |
@@ -29,43 +28,13 @@
 
 #include <ft_printf.h>
 
-static int	ft_get_size_x(t_arg *arg, int *size_nb)
-{
-	int		sz;
-	int		right;
-	int		nb_bit;
-
-	if (arg->arg.d > 0)
-	{
-		nb_bit = sizeof(long long) * 8;
-		right = nb_bit;
-		sz = sizeof(long long) * 2 + 1;
-		while ((right -= 4) >= 0 && --sz)
-			if (((arg->arg.d >> right) << (nb_bit - 4) >> (nb_bit - 4)) != 0)
-				break ;
-		return ((*size_nb = sz) ? sz : sz);
-	}
-	else if (arg->arg.d == 0)
-		return ((*size_nb = 1) ? 1 : 1);
-	sz = sizeof(int);
-	sz = (ft_getheight(arg) == 'H') ? sizeof(char) : sz;
-	sz = (ft_getheight(arg) == 'h') ? sizeof(short) : sz;
-	sz = (ft_getheight(arg) == 'l') ? sizeof(long) : sz;
-	sz = (ft_getheight(arg) == 'L') ? sizeof(t_ll) : sz;
-	sz = (arg->conv == 'p') ? sizeof(t_ll) : sz;
-	*size_nb = sz * ((arg->arg.d < 0 || sz == 1) ? 2 : 1);
-	return (sz);
-}
-
 static int	ft_conv_x_type(char **nbx, int *size_nb, t_arg *arg)
 {
 	static char	base[] = "0123456789abcdef";
 	int			left;
 	int			nb_bit;
 	int			i;
-	int			sz;
 
-	sz = ft_get_size_x(arg, size_nb);
 	if (!(*nbx = malloc(sizeof(char) * (*size_nb + 1))))
 		return (ERROR);
 	(*nbx)[*size_nb] = '\0';
