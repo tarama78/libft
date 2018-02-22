@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_errprintf.c                                     :+:      :+:    :+:   */
+/*   ft_clean_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/24 17:43:10 by tnicolas          #+#    #+#             */
-/*   Updated: 2018/02/08 19:18:28 by tnicolas         ###   ########.fr       */
+/*   Created: 2018/02/05 17:46:50 by tnicolas          #+#    #+#             */
+/*   Updated: 2018/02/05 17:53:04 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 **   ____________________________________________________________
-**   | ft_errprintf.c                                           |
-**   |     ft_printf(17 lines)                                  |
+**   | ft_clean_char.c                                          |
+**   |     ft_clean_char(19 lines)                              |
 **   ------------------------------------------------------------
 **           __n__n__  /
 **    .------`-\00/-'/
@@ -23,25 +23,27 @@
 **     |||   |||
 */
 
-#include <ft_printf.h>
+#include <libft.h>
 
-int			ft_errprintf(const char *format, ...)
+char		*ft_clean_char(char *s, char c)
 {
-	va_list	ap;
-	char	*str;
-	int		ret;
+	int		i;
+	int		j;
+	char	*ret;
 
-	str = NULL;
-	va_start(ap, format);
-	if ((ret = ft_vasprintf(&str, format, ap)) == ERROR)
-	{
-		va_end(ap);
-		return (ERROR);
-	}
-	va_end(ap);
-	if (str != NULL)
-		if (write(STDERR_FILENO, str, ret) == -1 && ft_free(1, str))
-			return (ERROR);
-	free(str);
+	i = -1;
+	j = 0;
+	while (s[++i])
+		if (s[i] == c)
+			j++;
+	j = i - j;
+	if (!(ret = malloc(sizeof(char) * (j + 1))))
+		return (NULL);
+	ret[j] = '\0';
+	i = -1;
+	j = -1;
+	while (s[++i])
+		if (s[i] != c)
+			ret[++j] = s[i];
 	return (ret);
 }
