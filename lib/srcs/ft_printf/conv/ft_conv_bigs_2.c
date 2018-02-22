@@ -6,7 +6,7 @@
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 17:11:43 by tnicolas          #+#    #+#             */
-/*   Updated: 2018/02/08 19:18:28 by tnicolas         ###   ########.fr       */
+/*   Updated: 2018/02/22 11:04:34 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 **   | ft_conv_bigs_2.c                                         |
 **   |     ft_strlen_wchart_s(11 lines)                         |
 **   |     ft_init_i(6 lines)                                   |
-**   |     ft_strcpy_custom_bigs(25 lines)                      |
+**   |     ft_strcpy_custom_bigs(26 lines)                      |
+**   |         MEUUUU too many lines                            |
 **   |     ft_taille_str(25 lines)                              |
 **   |     ft_add_conv_bigs(24 lines)                           |
 **   ------------------------------------------------------------
