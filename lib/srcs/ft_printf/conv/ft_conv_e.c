@@ -68,7 +68,7 @@ int			ft_flags_e(char **nr, char *nn, t_arg *arg)
 {
 	int		ln;
 
-	ln = ((t_ull)arg->wi > ft_strlen(nn)) ? arg->wi : ft_strlen(nn);
+	ln = ((t_ull)arg->wi > ft_strlen(nn)) ? arg->wi : (int)ft_strlen(nn);
 	ln += ((arg->flag.space == 1 || arg->flag.plus == 1) && nn[0] != '-' &&
 			(t_ull)arg->wi <= ft_strlen(nn)) ? 1 : 0;
 	if (!(*nr = malloc(sizeof(**nr) * (ln + 1))))
