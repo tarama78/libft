@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_errprintf.c                                     :+:      :+:    :+:   */
+/*   ft_joinnprintf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/24 17:43:10 by tnicolas          #+#    #+#             */
-/*   Updated: 2018/02/08 19:18:28 by tnicolas         ###   ########.fr       */
+/*   Created: 2018/02/19 11:51:50 by tnicolas          #+#    #+#             */
+/*   Updated: 2018/02/19 12:34:31 by tnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 **   ____________________________________________________________
-**   | ft_errprintf.c                                           |
-**   |     ft_printf(17 lines)                                  |
+**   | ft_joinnprintf.c                                         |
+**   |     ft_joinnprintf(24 lines)                             |
 **   ------------------------------------------------------------
 **           __n__n__  /
 **    .------`-\00/-'/
@@ -25,23 +25,30 @@
 
 #include <ft_printf.h>
 
-int			ft_errprintf(const char *format, ...)
+int			ft_joinnprintf(char **str, int n, const char *format, ...)
 {
 	va_list	ap;
-	char	*str;
 	int		ret;
+	int		len_str;
+	char	*total;
+	char	*add_str;
 
-	str = NULL;
+	len_str = (*str == NULL) ? 0 : n;
 	va_start(ap, format);
-	if ((ret = ft_vasprintf(&str, format, ap)) == ERROR)
+	if ((ret = ft_vasprintf(&add_str, format, ap)) == ERROR)
 	{
 		va_end(ap);
 		return (ERROR);
 	}
 	va_end(ap);
-	if (str != NULL)
-		if (write(STDERR_FILENO, str, ret) == -1 && ft_free(1, str))
-			return (ERROR);
-	free(str);
-	return (ret);
+	if (!(total = malloc(sizeof(char) * (ret + len_str + 1))))
+		return (ERROR);
+	if (len_str > 0)
+		ft_memcpy(total, *str, len_str) &&
+		ft_memcpy(total + len_str, add_str, ret + 1);
+	else
+		ft_memcpy(total, add_str, ret + 1);
+	ft_free(2, *str, add_str);
+	*str = total;
+	return (ret + len_str);
 }

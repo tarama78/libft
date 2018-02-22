@@ -6,7 +6,7 @@
 #    By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 09:45:36 by tnicolas          #+#    #+#              #
-#    Updated: 2018/02/01 10:12:40 by tnicolas         ###   ########.fr        #
+#    Updated: 2018/02/19 16:01:29 by tnicolas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,6 +87,7 @@ FILES = ft_strlen.c \
 		bonus/ft_ltoa.c \
 		bonus/ft_lltoa.c \
 		bonus/ft_abs.c \
+		bonus/ft_free.c \
 		bonus/ft_fruit.c \
 		bonus/ft_strndup.c \
 		bonus/ft_power.c \
@@ -94,7 +95,10 @@ FILES = ft_strlen.c \
 		bonus/ft_get2arg.c \
 		bonus/ft_islower.c \
 		bonus/ft_isupper.c \
+		bonus/ft_isspace.c\
 		bonus/ft_swap_int.c \
+		bonus/ft_clean_char.c \
+		bonus/ft_test_malloc.c \
 		bonus/get_next_line.c \
 		$(addprefix ft_printf/, $(FILES_FT_PRINTF))
 
@@ -106,6 +110,8 @@ FILES_FT_PRINTF = printf/ft_printf.c \
 		printf/ft_vdprintf.c \
 		printf/ft_asprintf.c \
 		printf/ft_vasprintf.c \
+		printf/ft_joinprintf.c \
+		printf/ft_joinnprintf.c \
 		color/ft_color.c \
 		color/ft_init_color.c \
 		check/ft_parse.c \
