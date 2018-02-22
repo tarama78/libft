@@ -39,8 +39,9 @@ static t_ll		ft_int_ll_h(t_arg *arg, va_list ap)
 	if (arg->height[1] == 'h')
 	{
 		ichar = (char)va_arg(ap, int);
-		uichar = (unsigned char)((ichar < 0) ? -ichar : ichar);
-		return ((ichar < 0) ? -(long long)uichar : (long long)uichar);
+		uichar = (unsigned char)(((signed char)ichar < 0) ? -ichar : ichar);
+		return (((signed char)ichar < 0) ? -(long long)uichar :
+				(long long)uichar);
 	}
 	ishort = (short)va_arg(ap, int);
 	uishort = (unsigned short)((ishort < 0) ? -ishort : ishort);
