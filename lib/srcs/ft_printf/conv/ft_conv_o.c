@@ -29,13 +29,44 @@
 
 #include <ft_printf.h>
 
+static int	ft_get_size_o(t_arg *arg, int *size_nb)
+{
+	int		sz;
+	int		right;
+	int		nb_bit;
+
+	if (arg->arg.d > 0)
+	{
+		nb_bit = sizeof(t_ll) * 8;
+		right = nb_bit - nb_bit % 3;
+		sz = (sizeof(t_ll) * 8) / 3 + (((sizeof(t_ll) * 8) % 3 == 0) ? 0 : 1);
+		while ((right -= 3) >= 0 && --sz)
+		{
+			if (((arg->arg.d >> right) << (nb_bit - 3) >> (nb_bit - 3)) != 0)
+				break ;
+		}
+		return ((*size_nb = sz) ? sz : sz);
+	}
+	else if (arg->arg.d == 0)
+		return ((*size_nb = 1) ? 1 : 1);
+	sz = sizeof(int);
+	sz = (ft_getheight(arg) == 'H') ? sizeof(char) : sz;
+	sz = (ft_getheight(arg) == 'h') ? sizeof(short) : sz;
+	sz = (ft_getheight(arg) == 'l') ? sizeof(long) : sz;
+	sz = (ft_getheight(arg) == 'L') ? sizeof(t_ll) : sz;
+	*size_nb = (sz * 8) / 3 + (((sz * 8) / 3 == 0) ? 0 : 1);
+	return (sz);
+}
+
 static int	ft_conv_o_type(char **nbx, int *size_nb, t_arg *arg)
 {
 	static char	bs[] = "01234567";
 	int			left;
 	int			nbbit;
 	int			i;
+	int			sz;
 
+	sz = ft_get_size_o(arg, size_nb);
 	if (!(*nbx = malloc(sizeof(char) * (*size_nb + 1))))
 		return (ERROR);
 	(*nbx)[*size_nb] = '\0';

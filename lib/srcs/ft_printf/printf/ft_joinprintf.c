@@ -44,8 +44,7 @@ int			ft_joinprintf(char **str, const char *format, ...)
 	if (!(total = malloc(sizeof(char) * (ret + len_str + 1))))
 		return (ERROR);
 	if (len_str > 0)
-		(void)(ft_strncpy(total, *str, len_str) &&
-		ft_strncat(total, add_str, ret + 1));
+		ft_strncpy(total, *str, len_str) && ft_strncat(total, add_str, ret + 1);
 	else
 		ft_strncpy(total, add_str, ret + 1);
 	ft_free(2, *str, add_str);

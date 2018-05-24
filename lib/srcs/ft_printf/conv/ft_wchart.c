@@ -30,13 +30,13 @@
 
 int			ft_strlenw(wchar_t wch)
 {
-	if (wch <= 0x7F)
+	if (wch <= 0x7F && wch >= 0)
 		return (1);
-	if (wch <= 0x7FF)
+	if (wch <= 0x7FF && wch >= 0)
 		return (2);
-	if (wch <= 0xFFFF)
+	if (wch <= 0xFFFF && wch >= 0)
 		return (3);
-	if (wch <= 0x10FFFF)
+	if (wch <= 0x10FFFF && wch >= 0)
 		return (4);
 	else
 		return (ERROR);

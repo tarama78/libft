@@ -58,10 +58,12 @@ static int	ft_strcpy_custom_bigs(char **str, t_arg *arg, wchar_t *x,
 		int *nbcar)
 {
 	int		i;
+	int		k;
 	char	*tmp;
 	int		len;
 
 	i = 0;
+	k = 0;
 	len = ft_strlen_wchart_s(x);
 	ft_init_i(&i, arg, len);
 	if (!(tmp = ft_strnew(*nbcar)))
@@ -130,8 +132,8 @@ int			ft_add_conv_bigs(char **ret, t_arg *arg, wchar_t *x, int cmpt)
 		arg->flag.zero = 0;
 		return (ft_checknull_bigs(ret, arg, &str, &x));
 	}
-	arg->cmpt = (arg->cmpt != 0) ? arg->cmpt - nbcar : arg->cmpt;
-	arg->cmpt = (cmpt != 0) ? arg->cmpt + cmpt : arg->cmpt;
+	arg->cmpt = (arg->cmpt != 0) ? arg->cmpt -= nbcar : arg->cmpt;
+	arg->cmpt = (cmpt != 0) ? arg->cmpt += cmpt : arg->cmpt;
 	if (!(*ret = ft_strfreejoin(*ret, str, strl, arg)))
 		return (ERROR);
 	arg->cmpt += strl;

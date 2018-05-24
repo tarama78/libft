@@ -62,7 +62,7 @@ static int	ft_conv_r_done(char **ret, t_arg *arg, va_list ap, char *str)
 				return (ERROR);
 			arg->cmpt += (i++) ? 1 : 1;
 		}
-		else if (str[i] == 127 || (str[i] < 32))
+		else if (str[i] == 127 || (str[i] < 32 && str[i] >= 0))
 		{
 			if (ft_joinstr(&tmp, str, i, &taille) == ERROR)
 				return (ERROR);

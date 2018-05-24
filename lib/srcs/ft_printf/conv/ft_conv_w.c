@@ -39,8 +39,10 @@ static int	ft_fruit2(char *str, char *mantisse, char *exp_new_ret)
 
 static int	ft_nb_len(int nb)
 {
+	t_ull	tmp;
 	int		nb_len;
 
+	tmp = (nb < 0) ? -(t_ull)nb : (t_ull)nb;
 	nb_len = (nb < 0) ? 2 : 1;
 	while (nb /= 10)
 		nb_len++;
