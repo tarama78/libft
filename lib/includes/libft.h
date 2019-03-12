@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <stdlib.h>
+# include <ft_malloc.h>
 
 # define BUFF_SIZE 32552
 
@@ -156,5 +157,15 @@ int			ft_asprintf(char **str, const char *format, ...);
 int			ft_vasprintf(char **ret, const char *format, va_list ap);
 int			ft_joinprintf(char **str, const char *format, ...);
 int			ft_joinnprintf(char **str, int n, const char *format, ...);
+
+void		*malloc(size_t size);
+void		*calloc(size_t count, size_t size);
+void		*realloc(void *ptr, size_t size);
+void		free(void *ptr);
+int			is_allocated(void *ptr);
+size_t		get_alloc_size(void *ptr);
+void		print_alloc_mem(void *ptr, size_t size);
+void		free_all(void);
+void		show_alloc_mem(void);
 
 #endif

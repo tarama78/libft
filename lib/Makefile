@@ -102,7 +102,8 @@ FILES = ft_strlen.c \
 		bonus/ft_clean_char.c \
 		bonus/ft_test_malloc.c \
 		bonus/get_next_line.c \
-		$(addprefix ft_printf/, $(FILES_FT_PRINTF))
+		$(addprefix ft_printf/, $(FILES_FT_PRINTF)) \
+		$(addprefix ft_malloc/, $(FILES_FT_MALLOC)) \
 
 FILES_FT_PRINTF = printf/ft_printf.c \
 		printf/ft_vprintf.c \
@@ -152,12 +153,25 @@ FILES_FT_PRINTF = printf/ft_printf.c \
 		conv/ft_conv_r.c \
 		conv/ft_conv_modulo.c \
 		conv/ft_conv_invalid.c \
-		conv/ft_regle_de_merde.c \
+		conv/ft_regle_de_merde.c
+
+FILES_FT_MALLOC = malloc.c \
+		realloc.c \
+		calloc.c \
+		free.c \
+		free_all.c \
+		show_alloc_mem.c \
+		alloc_memory.c \
+		alloc_memory_2.c \
+		get_alloc_size.c \
+		print_alloc_mem.c \
+		is_allocated.c
 
 HFILES = includes/libft.h \
 		 includes/struct.h \
 		 includes/ft_printf.h \
-		 includes/ft_printf_struct.h
+		 includes/ft_printf_struct.h \
+		 includes/ft_malloc.h
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror

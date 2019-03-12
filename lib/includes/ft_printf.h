@@ -16,16 +16,13 @@
 # include <stdarg.h>
 # include <libft.h>
 # include <unistd.h>
-# include <stdlib.h>
 # include <ft_printf_struct.h>
-# include <ft_printf.h>
+# include <wchar.h>
 
 # define SUCCESS 0
 # define ERROR -1
 # define END 1
 
-# include <libft.h>
-# include <wchar.h>
 
 # define PRINTF_ERROR -1
 
