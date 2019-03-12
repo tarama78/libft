@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_struct.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmilan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 14:14:48 by tnicolas          #+#    #+#             */
 /*   Updated: 2018/01/24 17:57:52 by tnicolas         ###   ########.fr       */

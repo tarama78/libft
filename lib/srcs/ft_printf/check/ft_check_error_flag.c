@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_error_flag.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmilan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 14:31:33 by tnicolas          #+#    #+#             */
 /*   Updated: 2018/01/14 13:19:05 by tnicolas         ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmilan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 15:57:02 by tnicolas          #+#    #+#             */
 /*   Updated: 2018/01/08 17:41:26 by tnicolas         ###   ########.fr       */

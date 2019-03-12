@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmilan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 17:26:22 by tnicolas          #+#    #+#             */
 /*   Updated: 2018/01/08 17:41:26 by tnicolas         ###   ########.fr       */

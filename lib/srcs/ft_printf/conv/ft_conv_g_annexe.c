@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_g_annexe.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmilan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/21 22:07:36 by tnicolas          #+#    #+#             */
 /*   Updated: 2018/01/14 13:19:06 by tnicolas         ###   ########.fr       */
